@@ -1,0 +1,166 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Setup &#8212; SET-documentation alpha0 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="setup">
+<h1>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h1>
+<p>Linux based system only</p>
+<dl>
+<dt>::</dt><dd><dl class="simple">
+<dt>sudo apt-get update &amp;&amp; sudo apt-get install -y </dt><dd><p>build-essential uuid-dev libgpgme-dev squashfs-tools libseccomp-dev wget pkg-config git cryptsetup-bin</p>
+</dd>
+</dl>
+<p>cd ~/opt
+export VERSION=1.13.5 OS=linux ARCH=amd64 &amp;&amp; </p>
+<blockquote>
+<div><p>wget <a class="reference external" href="https://dl.google.com/go/go$VERSION.$OS-$ARCH.tar.gz">https://dl.google.com/go/go$VERSION.$OS-$ARCH.tar.gz</a> &amp;&amp; sudo tar -C /usr/local -xzvf go$VERSION.$OS-$ARCH.tar.gz &amp;&amp; rm go$VERSION.$OS-$ARCH.tar.gz</p>
+</div></blockquote>
+<dl class="simple">
+<dt>echo ‘export GOPATH=${HOME}/opt/go’ &gt;&gt; ~/.bashrc &amp;&amp; </dt><dd><p>echo ‘export PATH=/usr/local/go/bin:${PATH}:${GOPATH}/bin’ &gt;&gt; ~/.bashrc &amp;&amp; source ~/.bashrc</p>
+</dd>
+</dl>
+<p>cd ~/opt
+export VERSION=3.5.2 &amp;&amp; # adjust this as necessary </p>
+<blockquote>
+<div><p>wget <a class="reference external" href="https://github.com/sylabs/singularity/releases/download">https://github.com/sylabs/singularity/releases/download</a>/v${VERSION}/singularity-${VERSION}.tar.gz &amp;&amp; tar -xzf singularity-${VERSION}.tar.gz &amp;&amp; cd singularity</p>
+</div></blockquote>
+<dl class="simple">
+<dt>./mconfig &amp;&amp; </dt><dd><p>make -C ./builddir &amp;&amp; sudo make -C ./builddir install</p>
+</dd>
+</dl>
+<p># install  nextflow 20.04.1
+cd ~/opt
+wget <a class="reference external" href="https://github.com/nextflow-io/nextflow/releases/download/v20.04.1/nextflow-20.04.1-all">https://github.com/nextflow-io/nextflow/releases/download/v20.04.1/nextflow-20.04.1-all</a>
+chmod +x nextflow-20.04.1-all</p>
+<p># Cmake
+cd ~/opt
+wget <a class="reference external" href="https://github.com/Kitware/CMake/releases/download/v3.13.2/cmake-3.13.2.tar.gz">https://github.com/Kitware/CMake/releases/download/v3.13.2/cmake-3.13.2.tar.gz</a>
+tar -xvzf cmake-3.13.2.tar.gz
+rm -f cmake-3.13.2.tar.gz
+cd cmake-3.13.2
+./bootstrap
+make -j 6
+make install</p>
+<p># ANTs
+cd ~/opt
+mkdir ants_build
+git clone <a class="reference external" href="https://github.com/ANTsX/ANTs.git">https://github.com/ANTsX/ANTs.git</a>
+cd ANTs
+git fetch –tags
+git checkout tags/v2.3.1 -b v2.3.1
+cd ../ants_build
+cmake ../ANTs
+make -j 6
+cp ../ANTs/Scripts/<a href="#id1"><span class="problematic" id="id2">*</span></a>.sh bin/</p>
+<p># Freesurfer
+cd ~/opt
+wget <a class="reference external" href="https://surfer.nmr.mgh.harvard.edu/pub/dist/freesurfer/6.0.1/freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.1.tar.gz">https://surfer.nmr.mgh.harvard.edu/pub/dist/freesurfer/6.0.1/freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.1.tar.gz</a>
+tar zxvf freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.1.tar.gz
+rm freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.1.tar.gz
+sed -i “s/source $FREESURFER/bash $FREESURFER/g” /freesurfer/freesurfer/SetUpFreeSurfer.sh</p>
+<p>echo “TODO :  mv license.txt opt/freesurfer/”</p>
+<p># MRtrix
+cd ~/opt
+git clone <a class="reference external" href="https://github.com/MRtrix3/mrtrix3.git">https://github.com/MRtrix3/mrtrix3.git</a>
+cd mrtrix3
+git fetch –tags
+git checkout tags/3.0_RC3 -b 3.0_RC3
+./configure
+./build</p>
+</dd>
+</dl>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">SET-documentation</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Etienne St-Onge.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.2.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/setup/setup.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
