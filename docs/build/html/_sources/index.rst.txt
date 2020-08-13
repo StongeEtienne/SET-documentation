@@ -15,25 +15,21 @@ Surface-enhanced tractography (SET) incorporate cortical surfaces in state-of-th
 
 .. toctree::
     :maxdepth: 1
-    :caption: Setup
 
     setup/setup
 
 .. toctree::
     :maxdepth: 1
-    :caption: Usage
 
     usage/usage
 
 .. toctree::
     :maxdepth: 1
-    :caption: Reference
 
     ref/ref
 
 .. toctree::
     :maxdepth: 1
-    :caption: License
 
     license/license
 
