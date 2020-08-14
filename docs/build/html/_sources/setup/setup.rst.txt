@@ -3,8 +3,8 @@ Setup
 
 Linux based system only
 
-
 ::
+
     sudo apt-get update && sudo apt-get install -y \
         build-essential \
         uuid-dev \
