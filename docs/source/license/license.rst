@@ -2,6 +2,7 @@ License
 =======
 
 ::
+
     END USER LICENSE AGREEMENT
 
     NOTICE TO USER: PLEASE READ THIS CONTRACT CAREFULLY. BY USING ALL OR ANY PORTION
@@ -15,7 +16,7 @@ License
 
     "Licensor" means Etienne St-Onge
 
-    "Application" means all of the contents of the files with which this Agreement 
+    "Application" means all of the contents of the files with which this Agreement
     is provided, including but not limited to (i) software; (ii)
     image files ("Databases").
 
@@ -37,9 +38,9 @@ License
     2. Software License
 
     As long as you comply with the terms of this End User License Agreement (the
-    "Agreement"), Etienne St-Onge grants to you a world-wide, royalty-free and non-exclusive 
-    license to Use the Application. Some third party materials included in the 
-    Application may be subject to other terms and conditions, which are typically 
+    "Agreement"), Etienne St-Onge grants to you a world-wide, royalty-free and non-exclusive
+    license to Use the Application. Some third party materials included in the
+    Application may be subject to other terms and conditions, which are typically
     listed in "Third party license" part.
 
     2.1 General Use
@@ -82,7 +83,7 @@ License
 
     You may transfer all your rights to Use the Application
     to another person or legal entity provided that: (a) you also transfer this
-    Agreement and the Application; (c) the receiving party accepts the terms and 
+    Agreement and the Application; (c) the receiving party accepts the terms and
     conditions of this Agreement.
 
     4. NO WARRANTY
@@ -131,4 +132,3 @@ License
 
     If you have any question regarding this Agreement or if you wish to request any
     information, please contact Etienne St-Onge.
-

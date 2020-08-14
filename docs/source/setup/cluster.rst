@@ -1,0 +1,9 @@
+Setup on cluster
+=====
+
+Linux based system only
+
+::
+
+    module load java/1.8.0_121
+    module load singularity/2.6
