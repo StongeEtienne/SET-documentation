@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Usage &mdash; SET-documentation alpha0 documentation</title>
+  <title>Usage for HCP &mdash; SET-documentation alpha0 documentation</title>
   
 
   
@@ -36,7 +36,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="References" href="../ref/ref.html" />
-    <link rel="prev" title="Usage" href="usage.html" /> 
+    <link rel="prev" title="Python" href="../setup/python.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -80,14 +80,22 @@
               
             
             
-              <ul>
+              <p class="caption"><span class="caption-text">Setup</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="../setup/setup.html">Setup</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../setup/cluster.html">Setup on cluster</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../setup/python.html">Python</a></li>
 </ul>
+<p class="caption"><span class="caption-text">Run HCP</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Usage</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Usage for HCP</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#setup-data">Setup data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#run-tractoflow-nextflow-tractoflow-stonge">Run Tractoflow Nextflow  (tractoflow_stonge)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#run-set-nextflow-set-nf">Run SET Nextflow  (set-nf)</a></li>
 </ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../ref/ref.html">References</a></li>
 </ul>
@@ -138,7 +146,7 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>Usage</li>
+      <li>Usage for HCP</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -157,10 +165,48 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="usage">
-<h1>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nextflow</span> <span class="o">-</span><span class="n">c</span> <span class="o">/</span><span class="n">scratch</span><span class="o">/</span><span class="n">stoeti</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">singularity</span><span class="o">.</span><span class="n">conf</span> <span class="n">run</span> <span class="o">/</span><span class="n">scratch</span><span class="o">/</span><span class="n">stoeti</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">set_alpha10v0</span><span class="o">/</span><span class="n">tractoflow_stonge</span><span class="o">/</span><span class="n">main</span><span class="o">.</span><span class="n">nf</span> <span class="o">--</span><span class="n">root</span> <span class="o">/</span><span class="n">scratch</span><span class="o">/</span><span class="n">stoeti</span><span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">hcp_tr</span><span class="o">/</span><span class="n">hcp_tractoflow_fsl_input_test</span><span class="o">/</span> <span class="o">-</span><span class="n">profile</span> <span class="n">brain_mask_only</span> <span class="o">--</span><span class="n">dti_shells</span> <span class="s1">&#39;0 1000&#39;</span> <span class="o">--</span><span class="n">fodf_shells</span> <span class="s1">&#39;0 1000 2000 3000&#39;</span> <span class="o">--</span><span class="n">run_topup</span> <span class="n">false</span> <span class="o">--</span><span class="n">run_eddy</span> <span class="n">false</span> <span class="o">--</span><span class="n">run_resample_dwi</span> <span class="n">false</span> <span class="o">--</span><span class="n">sh_order</span> <span class="mi">8</span> <span class="o">--</span><span class="n">set_frf</span> <span class="n">true</span> <span class="o">--</span><span class="n">manual_frf</span> <span class="mi">15</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span> <span class="o">--</span><span class="n">run_ants_warp_t1</span> <span class="n">false</span> <span class="n">run_resample_t1</span> <span class="n">false</span> <span class="o">--</span><span class="n">run_denoise_t1</span> <span class="n">true</span> <span class="o">--</span><span class="n">run_n4_t1</span> <span class="n">false</span> <span class="o">--</span><span class="n">run_dwi_denoising</span> <span class="n">true</span> <span class="o">--</span><span class="n">processes_denoise_dwi</span> <span class="mi">8</span> <span class="o">-</span><span class="k">with</span><span class="o">-</span><span class="n">report</span> <span class="n">report</span><span class="o">.</span><span class="n">html</span> <span class="o">-</span><span class="k">with</span><span class="o">-</span><span class="n">singularity</span> <span class="o">/</span><span class="n">scratch</span><span class="o">/</span><span class="n">stoeti</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">tractoflow_2</span><span class="o">.</span><span class="mf">0.0_8</span><span class="n">b39aee_2019</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mf">26.</span><span class="n">img</span> <span class="o">-</span><span class="n">resume</span> <span class="o">-</span><span class="k">with</span><span class="o">-</span><span class="n">mpi</span>
+  <div class="section" id="usage-for-hcp">
+<h1>Usage for HCP<a class="headerlink" href="#usage-for-hcp" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="setup-data">
+<h2>Setup data<a class="headerlink" href="#setup-data" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="run-tractoflow-nextflow-tractoflow-stonge">
+<h2>Run Tractoflow Nextflow  (tractoflow_stonge)<a class="headerlink" href="#run-tractoflow-nextflow-tractoflow-stonge" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mkdir</span> <span class="o">/</span><span class="n">scratch</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">nf</span><span class="o">/</span><span class="n">hcp_tf_test</span>
+<span class="n">cd</span> <span class="o">/</span><span class="n">scratch</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">nf</span><span class="o">/</span><span class="n">hcp_tf_test</span>
+
+<span class="n">nextflow</span> <span class="o">-</span><span class="n">c</span> <span class="o">/</span><span class="n">scratch</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">nf</span><span class="o">/</span><span class="n">singularity</span><span class="o">.</span><span class="n">conf</span> <span class="n">run</span> <span class="o">/</span><span class="n">scratch</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">nf</span><span class="o">/</span><span class="n">set_alpha10v0</span><span class="o">/</span><span class="n">tractoflow_stonge</span><span class="o">/</span><span class="n">main</span><span class="o">.</span><span class="n">nf</span> \
+    <span class="o">--</span><span class="n">root</span> <span class="o">/</span><span class="n">scratch</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">hcp_data</span><span class="o">/</span> \
+    <span class="o">-</span><span class="n">profile</span> <span class="n">brain_mask_only</span> \
+    <span class="o">--</span><span class="n">dti_shells</span> <span class="s2">&quot;0 1000&quot;</span> <span class="o">--</span><span class="n">fodf_shells</span> <span class="s2">&quot;0 1000 2000 3000&quot;</span> \
+    <span class="o">--</span><span class="n">run_topup</span> <span class="n">false</span> <span class="o">--</span><span class="n">run_eddy</span> <span class="n">false</span> \
+    <span class="o">--</span><span class="n">run_resample_dwi</span> <span class="n">false</span> <span class="o">--</span><span class="n">sh_order</span> <span class="mi">8</span> \
+    <span class="o">--</span><span class="n">set_frf</span> <span class="n">true</span> <span class="o">--</span><span class="n">manual_frf</span> <span class="s2">&quot;15,4,4&quot;</span> \
+    <span class="o">--</span><span class="n">run_ants_warp_t1</span> <span class="n">false</span> <span class="n">run_resample_t1</span> <span class="n">false</span> \
+    <span class="o">--</span><span class="n">run_denoise_t1</span> <span class="n">true</span> <span class="o">--</span><span class="n">run_n4_t1</span> <span class="n">false</span> \
+    <span class="o">--</span><span class="n">run_dwi_denoising</span> <span class="n">true</span> <span class="o">--</span><span class="n">processes_denoise_dwi</span> <span class="mi">8</span> \
+    <span class="o">-</span><span class="k">with</span><span class="o">-</span><span class="n">report</span> <span class="n">report</span><span class="o">.</span><span class="n">html</span> \
+    <span class="o">-</span><span class="k">with</span><span class="o">-</span><span class="n">singularity</span> <span class="o">/</span><span class="n">scratch</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">nf</span><span class="o">/</span><span class="n">tractoflow_2</span><span class="o">.</span><span class="mf">0.0_8</span><span class="n">b39aee_2019</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mf">26.</span><span class="n">img</span> \
+    <span class="o">-</span><span class="n">resume</span>
 </pre></div>
+</div>
+</div>
+<div class="section" id="run-set-nextflow-set-nf">
+<h2>Run SET Nextflow  (set-nf)<a class="headerlink" href="#run-set-nextflow-set-nf" title="Permalink to this headline">¶</a></h2>
+<p>PROFILE :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mkdir</span> <span class="o">/</span><span class="n">scratch</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">nf</span><span class="o">/</span><span class="n">hcp_set_test</span>
+<span class="n">cd</span> <span class="o">/</span><span class="n">scratch</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">nf</span><span class="o">/</span><span class="n">hcp_set_test</span>
+
+<span class="n">nextflow</span><span class="o">-</span><span class="mf">20.04</span><span class="o">.</span><span class="mi">1</span><span class="o">-</span><span class="nb">all</span> <span class="o">-</span><span class="n">c</span> <span class="o">/</span><span class="n">scratch</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">nf</span><span class="o">/</span><span class="n">singularity</span><span class="o">.</span><span class="n">conf</span> <span class="n">run</span> <span class="o">/</span><span class="n">scratch</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">nf</span><span class="o">/</span><span class="n">set_alpha10v0</span><span class="o">/</span><span class="nb">set</span><span class="o">-</span><span class="n">nf</span><span class="o">/</span><span class="n">main</span><span class="o">.</span><span class="n">nf</span> \
+    <span class="o">--</span><span class="n">tractoflow</span> <span class="o">/</span><span class="n">scratch</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">nf</span><span class="o">/</span><span class="n">hcp_tf_test</span><span class="o">/</span><span class="n">results</span><span class="o">/</span> \
+    <span class="o">--</span><span class="n">surfaces</span> <span class="o">/</span><span class="n">scratch</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">hcp_freesurfer</span><span class="o">/</span> \
+    <span class="o">--</span><span class="n">nowarp</span> <span class="n">true</span> \
+    <span class="o">-</span><span class="n">profile</span> <span class="n">civet2_dkt</span> \
+    <span class="o">-</span><span class="k">with</span><span class="o">-</span><span class="n">report</span> <span class="n">report</span><span class="o">.</span><span class="n">html</span> \
+    <span class="o">-</span><span class="k">with</span><span class="o">-</span><span class="n">singularity</span> <span class="o">/</span><span class="n">scratch</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">nf</span><span class="o">/</span><span class="n">set_alpha10v0</span><span class="o">/</span><span class="n">set_alpha10v0</span><span class="o">.</span><span class="n">img</span> \
+    <span class="o">-</span><span class="n">resume</span>
+</pre></div>
+</div>
 </div>
 </div>
 
@@ -175,7 +221,7 @@
         <a href="../ref/ref.html" class="btn btn-neutral float-right" title="References" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="usage.html" class="btn btn-neutral float-left" title="Usage" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../setup/python.html" class="btn btn-neutral float-left" title="Python" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

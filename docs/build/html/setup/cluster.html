@@ -35,7 +35,7 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Usage for HCP" href="../usage/usage.html" />
+    <link rel="next" title="Python" href="python.html" />
     <link rel="prev" title="Setup" href="setup.html" /> 
 </head>
 
@@ -80,14 +80,21 @@
               
             
             
-              <ul class="current">
+              <p class="caption"><span class="caption-text">Setup</span></p>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="setup.html">Setup</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Setup on cluster</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Setup on cluster</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#requirements-bashrc-or-run-script">Requirements (bashrc, or run script)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#singularity-config-file-singularity-conf">Singularity config file (singularity.conf)</a></li>
 </ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="python.html">Python</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Run HCP</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../usage/usage.html">Usage for HCP</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../usage/hcp.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage/hcp.html">Usage for HCP</a></li>
 </ul>
+<p class="caption"><span class="caption-text">References</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../ref/ref.html">References</a></li>
 </ul>
@@ -160,9 +167,22 @@
   <div class="section" id="setup-on-cluster">
 <h1>Setup on cluster<a class="headerlink" href="#setup-on-cluster" title="Permalink to this headline">¶</a></h1>
 <p>Linux based system only</p>
+<div class="section" id="requirements-bashrc-or-run-script">
+<h2>Requirements (bashrc, or run script)<a class="headerlink" href="#requirements-bashrc-or-run-script" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">module</span> <span class="n">load</span> <span class="n">java</span><span class="o">/</span><span class="mf">1.8</span><span class="o">.</span><span class="mi">0_121</span>
-<span class="n">module</span> <span class="n">load</span> <span class="n">singularity</span><span class="o">/</span><span class="mf">2.6</span>
+<span class="n">module</span> <span class="n">load</span> <span class="n">singularity</span><span class="o">/</span><span class="mf">3.5</span>
+
+<span class="n">export</span> <span class="n">_JAVA_OPTIONS</span><span class="o">=-</span><span class="n">Xmx512m</span>
+<span class="n">export</span> <span class="n">JVM_OPTS</span><span class="o">=</span><span class="s2">&quot;-server -Xmx512m -Xmx512m&quot;</span>
 </pre></div>
+</div>
+</div>
+<div class="section" id="singularity-config-file-singularity-conf">
+<h2>Singularity config file (singularity.conf)<a class="headerlink" href="#singularity-config-file-singularity-conf" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">singularity</span><span class="o">.</span><span class="n">runOptions</span><span class="o">=</span><span class="s2">&quot;--bind /full_path_to/scratch/user/nf,/full_path_to/scratch/user/data&quot;</span>
+<span class="n">process</span><span class="o">.</span><span class="n">executor</span><span class="o">=</span><span class="s1">&#39;ignite&#39;</span>
+</pre></div>
+</div>
 </div>
 </div>
 
@@ -174,7 +194,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../usage/usage.html" class="btn btn-neutral float-right" title="Usage for HCP" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="python.html" class="btn btn-neutral float-right" title="Python" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="setup.html" class="btn btn-neutral float-left" title="Setup" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

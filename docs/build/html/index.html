@@ -79,14 +79,23 @@
               
             
             
-              <ul>
+              <p class="caption"><span class="caption-text">Setup</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="setup/setup.html">Setup</a></li>
 <li class="toctree-l1"><a class="reference internal" href="setup/cluster.html">Setup on cluster</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup/python.html">Python</a></li>
 </ul>
+<p class="caption"><span class="caption-text">Usage</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="usage/usage.html">Usage for HCP</a></li>
-<li class="toctree-l1"><a class="reference internal" href="usage/hcp.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage/data.html">Data Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage/set-freesurfer.html">Usage: SET with FreeSurfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage/set-civet.html">Usage: SET with CIVET</a></li>
 </ul>
+<p class="caption"><span class="caption-text">Run HCP</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="usage/hcp.html">Usage for HCP</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="ref/ref.html">References</a></li>
 </ul>
@@ -169,18 +178,61 @@ Towards quantitative connectivity analysis: reducing tractography biases.
 Neuroimage, 98, pp.266-278.  <a class="reference external" href="https://doi.org/10.1016/j.neuroimage.2014.04.074">https://doi.org/10.1016/j.neuroimage.2014.04.074</a></p>
 </div>
 <div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">Setup</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="setup/setup.html">Setup</a></li>
-<li class="toctree-l1"><a class="reference internal" href="setup/cluster.html">Setup on cluster</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup/setup.html">Setup</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="setup/setup.html#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup/setup.html#singularity">Singularity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup/setup.html#nextflow">Nextflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup/setup.html#other-tools-ants-mrtrix3-freesurfer">Other tools (ANTs, MRtrix3, Freesurfer)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="setup/cluster.html">Setup on cluster</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="setup/cluster.html#requirements-bashrc-or-run-script">Requirements (bashrc, or run script)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup/cluster.html#singularity-config-file-singularity-conf">Singularity config file (singularity.conf)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="setup/python.html">Python</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="setup/python.html#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup/python.html#annaconda">Annaconda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup/python.html#python-3-7-for-tractoflow-scilpy">Python 3.7 (for tractoflow, scilpy)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup/python.html#python-2-7-for-set-scilpy-old">Python 2.7 (for set, scilpy_old)</a></li>
+</ul>
+</li>
 </ul>
 </div>
 <div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">Usage</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="usage/usage.html">Usage for HCP</a></li>
-<li class="toctree-l1"><a class="reference internal" href="usage/hcp.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage/data.html">Data Requirements</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="usage/data.html#data-for-freesurfer">Data for freesurfer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage/data.html#data-for-civet">Data for CIVET</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage/data.html#data-for-tractoflow">Data for Tractoflow</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="usage/set-freesurfer.html">Usage: SET with FreeSurfer</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="usage/set-freesurfer.html#run-freesurfer">Run freesurfer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage/set-freesurfer.html#run-tractoflow-nextflow">Run Tractoflow Nextflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage/set-freesurfer.html#run-civet">Run civet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage/set-freesurfer.html#run-set-nextflow-set-nf">Run SET Nextflow  (set-nf)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="usage/set-civet.html">Usage: SET with CIVET</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="usage/set-civet.html#run-civet">Run civet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage/set-civet.html#run-tractoflow-profile-civet-pve">Run Tractoflow (-profile civet_pve)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage/set-civet.html#run-set-nextflow-set-nf">Run SET Nextflow  (set-nf)</a></li>
+</ul>
+</li>
 </ul>
 </div>
 <div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">Run HCP</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="usage/hcp.html">Usage for HCP</a></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">References</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="ref/ref.html">References</a></li>
 </ul>

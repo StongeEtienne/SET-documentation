@@ -1,0 +1,249 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Usage: SET with CIVET &mdash; SET-documentation alpha0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> SET-documentation
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Setup</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../setup/setup.html">Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../setup/cluster.html">Setup on cluster</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../setup/python.html">Python</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Run HCP</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="hcp.html">Usage for HCP</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ref/ref.html">References</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../license/license.html">License</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SET-documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Usage: SET with CIVET</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/usage/set-civet.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="usage-set-with-civet">
+<h1>Usage: SET with CIVET<a class="headerlink" href="#usage-set-with-civet" title="Permalink to this headline">¶</a></h1>
+<p>Download SET package : TODO LINK</p>
+<div class="section" id="run-civet">
+<h2>Run civet<a class="headerlink" href="#run-civet" title="Permalink to this headline">¶</a></h2>
+<dl>
+<dt>::</dt><dd><p>input_data =</p>
+<p>mkdir ~/nf/civet_test
+cd ~/nf/civet_test</p>
+<p># Use the online CBRAIN tools and Guide
+nextflow-20.04.1-all ~/nf/set_alpha10v0/set-nf/civet-nf/main.nf </p>
+<blockquote>
+<div><p>–civet civet_output/ -with-singularity ~/nf/set_alpha10v0/set_alpha10v0.img -resume</p>
+</div></blockquote>
+<p>cd ~/nf/
+sh ~/nf/set_alpha10v0civet-nf/tree_for_tractoflow.sh -f input_data/ -c ~/nf/civet_test -o tractoflow_pve/</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="run-tractoflow-profile-civet-pve">
+<h2>Run Tractoflow (-profile civet_pve)<a class="headerlink" href="#run-tractoflow-profile-civet-pve" title="Permalink to this headline">¶</a></h2>
+<p>PROFILE :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mkdir</span> <span class="o">~/</span><span class="n">nf</span><span class="o">/</span><span class="n">tf_test</span>
+<span class="n">cd</span> <span class="o">~/</span><span class="n">nf</span><span class="o">/</span><span class="n">tf_test</span>
+
+<span class="n">nextflow</span><span class="o">-</span><span class="mf">20.04</span><span class="o">.</span><span class="mi">1</span><span class="o">-</span><span class="nb">all</span> <span class="n">run</span> <span class="o">~/</span><span class="n">nf</span><span class="o">/</span><span class="n">set_alpha10v0</span><span class="o">/</span><span class="n">tractoflow_stonge</span><span class="o">/</span><span class="n">main</span><span class="o">.</span><span class="n">nf</span> \
+    <span class="o">--</span><span class="n">root</span> <span class="n">tractoflow_pve</span><span class="o">/</span> \
+    <span class="o">-</span><span class="n">dti_shells</span> <span class="s2">&quot;0 1000&quot;</span> <span class="o">--</span><span class="n">fodf_shells</span> <span class="s2">&quot;0 1000&quot;</span> \
+    <span class="o">-</span><span class="n">profile</span> <span class="n">civet_pve</span> \
+    <span class="o">-</span><span class="k">with</span><span class="o">-</span><span class="n">singularity</span> <span class="o">~/</span><span class="n">nf</span><span class="o">/</span><span class="n">tractoflow_2</span><span class="o">.</span><span class="mf">0.0_8</span><span class="n">b39aee_2019</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mf">26.</span><span class="n">img</span> \
+    <span class="o">-</span><span class="n">resume</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="run-set-nextflow-set-nf">
+<h2>Run SET Nextflow  (set-nf)<a class="headerlink" href="#run-set-nextflow-set-nf" title="Permalink to this headline">¶</a></h2>
+<p>PROFILE :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nextflow</span><span class="o">-</span><span class="mf">20.04</span><span class="o">.</span><span class="mi">1</span><span class="o">-</span><span class="nb">all</span> <span class="n">run</span> <span class="o">~/</span><span class="n">nf</span><span class="o">/</span><span class="n">set_alpha10v0</span><span class="o">/</span><span class="nb">set</span><span class="o">-</span><span class="n">nf</span><span class="o">/</span><span class="n">main</span><span class="o">.</span><span class="n">nf</span> \
+    <span class="o">--</span><span class="n">tractoflow</span> <span class="n">tractoflow_output</span><span class="o">/</span> \
+    <span class="o">--</span><span class="n">surfaces</span> <span class="n">freesurfer_output</span><span class="o">/</span> \
+    <span class="o">-</span><span class="n">profile</span> <span class="n">freesurfer_basic</span> \
+    <span class="o">-</span><span class="k">with</span><span class="o">-</span><span class="n">singularity</span> <span class="o">~/</span><span class="n">nf</span><span class="o">/</span><span class="n">set_alpha10v0</span><span class="o">/</span><span class="n">set_alpha10v0</span><span class="o">.</span><span class="n">img</span> \
+    <span class="o">-</span><span class="n">resume</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Etienne St-Onge
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

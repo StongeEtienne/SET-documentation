@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>References &mdash; SET-documentation alpha0 documentation</title>
+  <title>Data Requirements &mdash; SET-documentation alpha0 documentation</title>
   
 
   
@@ -34,9 +34,7 @@
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="License" href="../license/license.html" />
-    <link rel="prev" title="Usage for HCP" href="../usage/hcp.html" /> 
+    <link rel="search" title="Search" href="../search.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -88,11 +86,11 @@
 </ul>
 <p class="caption"><span class="caption-text">Run HCP</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../usage/hcp.html">Usage for HCP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hcp.html">Usage for HCP</a></li>
 </ul>
 <p class="caption"><span class="caption-text">References</span></p>
-<ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">References</a></li>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ref/ref.html">References</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../license/license.html">License</a></li>
@@ -141,13 +139,13 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>References</li>
+      <li>Data Requirements</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/ref/ref.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/usage/data.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -160,8 +158,46 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="references">
-<h1>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="data-requirements">
+<h1>Data Requirements<a class="headerlink" href="#data-requirements" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="data-for-freesurfer">
+<h2>Data for freesurfer<a class="headerlink" href="#data-for-freesurfer" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="data-for-civet">
+<h2>Data for CIVET<a class="headerlink" href="#data-for-civet" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="data-for-tractoflow">
+<h2>Data for Tractoflow<a class="headerlink" href="#data-for-tractoflow" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[root folder as input]
+├── S1
+│   ├── brain_mask.nii.gz
+│   ├── bval
+│   ├── bvec
+│   ├── dwi.nii.gz
+│   ├── t1.nii.gz
+│   ├── rev_b0.nii.gz  (optional)
+│   └── pve_wm.nii.gz*  (with civet_pve or fsl_pve)
+│   └── pve_gm.nii.gz*  (with civet_pve or fsl_pve)
+│   └── pve_csf.nii.gz* (with civet_pve or fsl_pve)
+│   └── pve_sc.nii.gz*  (with civet_pve)
+└── S2
+    ├── brain_mask.nii.gz
+    ├── ...
+</pre></div>
+</div>
+<div class="section" id="standard-profile">
+<h3>Standard profile<a class="headerlink" href="#standard-profile" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="profile-brain-mask-only">
+<h3>-profile brain_mask_only<a class="headerlink" href="#profile-brain-mask-only" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="profile-civet-pve">
+<h3>-profile civet_pve<a class="headerlink" href="#profile-civet-pve" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="profile-fsl-pve">
+<h3>-profile fsl_pve<a class="headerlink" href="#profile-fsl-pve" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
 </div>
 
 
@@ -169,15 +205,6 @@
            
           </div>
           <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="../license/license.html" class="btn btn-neutral float-right" title="License" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="../usage/hcp.html" class="btn btn-neutral float-left" title="Usage for HCP" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-    </div>
   
 
   <hr/>

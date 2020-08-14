@@ -1,0 +1,299 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Python &mdash; SET-documentation alpha0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Usage for HCP" href="../usage/hcp.html" />
+    <link rel="prev" title="Setup on cluster" href="cluster.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> SET-documentation
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Setup</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="setup.html">Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cluster.html">Setup on cluster</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Python</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#annaconda">Annaconda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#python-3-7-for-tractoflow-scilpy">Python 3.7 (for tractoflow, scilpy)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#python-2-7-for-set-scilpy-old">Python 2.7 (for set, scilpy_old)</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Run HCP</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../usage/hcp.html">Usage for HCP</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ref/ref.html">References</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../license/license.html">License</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SET-documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Python</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/setup/python.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="python">
+<h1>Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h1>
+<p>Only for courageous people that really love python.
+Guide to setup python to run/develop SET-pipeline without singularity image</p>
+<div class="section" id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">update</span> <span class="o">&amp;&amp;</span> <span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> \
+    <span class="n">build</span><span class="o">-</span><span class="n">essential</span> \
+    <span class="n">uuid</span><span class="o">-</span><span class="n">dev</span> \
+    <span class="n">libgpgme</span><span class="o">-</span><span class="n">dev</span> \
+    <span class="n">squashfs</span><span class="o">-</span><span class="n">tools</span> \
+    <span class="n">libseccomp</span><span class="o">-</span><span class="n">dev</span> \
+    <span class="n">wget</span> \
+    <span class="n">pkg</span><span class="o">-</span><span class="n">config</span> \
+    <span class="n">git</span> \
+    <span class="n">cryptsetup</span><span class="o">-</span><span class="nb">bin</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="annaconda">
+<h2>Annaconda<a class="headerlink" href="#annaconda" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">wget</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">repo</span><span class="o">.</span><span class="n">anaconda</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">archive</span><span class="o">/</span><span class="n">Anaconda3</span><span class="o">-</span><span class="mf">2020.07</span><span class="o">-</span><span class="n">Linux</span><span class="o">-</span><span class="n">x86_64</span><span class="o">.</span><span class="n">sh</span>
+<span class="n">bash</span> <span class="n">Anaconda3</span><span class="o">-</span><span class="mf">2020.07</span><span class="o">-</span><span class="n">Linux</span><span class="o">-</span><span class="n">x86_64</span><span class="o">.</span><span class="n">sh</span>
+
+<span class="n">source</span> <span class="o">~/.</span><span class="n">bashrc</span>
+<span class="c1"># Remove the default install  (ALWAYS USE ENVIRONMENT)</span>
+<span class="n">conda</span> <span class="n">config</span> <span class="o">--</span><span class="nb">set</span> <span class="n">auto_activate_base</span> <span class="n">false</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="python-3-7-for-tractoflow-scilpy">
+<h2>Python 3.7 (for tractoflow, scilpy)<a class="headerlink" href="#python-3-7-for-tractoflow-scilpy" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">create</span> <span class="o">-</span><span class="n">n</span> <span class="n">set37</span> <span class="n">python</span><span class="o">=</span><span class="mf">3.7</span>
+<span class="n">conda</span> <span class="n">activate</span> <span class="n">set37</span>
+
+<span class="n">cd</span> <span class="o">~</span>
+<span class="n">mkdir</span> <span class="n">src</span><span class="o">/</span>
+<span class="n">cd</span> <span class="n">src</span><span class="o">/</span>
+<span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">scilus</span><span class="o">/</span><span class="n">scilpy</span><span class="o">.</span><span class="n">git</span> <span class="n">scilpy</span>
+<span class="n">cd</span> <span class="n">scilpy</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">e</span> <span class="o">.</span>
+
+<span class="n">conda</span> <span class="n">install</span> <span class="n">matplotlib</span> <span class="n">ipython</span> <span class="n">jupyter</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="python-2-7-for-set-scilpy-old">
+<h2>Python 2.7 (for set, scilpy_old)<a class="headerlink" href="#python-2-7-for-set-scilpy-old" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>conda create -n set27 python=2.7
+conda activate set27
+
+conda install numpy scipy matplotlib ipython jupyter cython
+
+pip install h5py==2.9.0
+pip install imageio==2.4.1
+pip install moviepy==0.2.3.5
+pip install openpyxl==2.4.8
+pip install pandas==0.20.3
+pip install Pillow==5.2.0
+pip install requests==2.19.1
+pip install scikit-learn==0.19.0
+pip install vtk==8.1.2
+pip install PyMCubes==0.0.9
+pip install nibabel==2.4.0
+pip install git+https://github.com/MarcCote/tractconverter@master#tractconverter
+pip install fury==0.4.0
+pip install dipy==0.16.0
+
+cd ~
+mkdir src/
+cd src/
+git clone ${SCILPYB} scilpy_b
+cd scilpy_b
+
+python setup.py build_all
+pip install -e .
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../usage/hcp.html" class="btn btn-neutral float-right" title="Usage for HCP" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="cluster.html" class="btn btn-neutral float-left" title="Setup on cluster" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Etienne St-Onge
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
