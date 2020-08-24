@@ -1,0 +1,382 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Setup dev (without singularity) &mdash; SET-documentation alpha0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Setup on cluster" href="cluster.html" />
+    <link rel="prev" title="Setup with singularity" href="setup.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> SET-documentation
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Setup</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="setup.html">Setup with singularity</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Setup  dev (without singularity)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#python">Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#other-tools-ants-mrtrix3-freesurfer">Other tools (ANTs, MRtrix3, Freesurfer)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#minc-tools-civet">MINC tools (CIVET)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#civet-labels">CIVET Labels</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cluster.html">Setup on cluster</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python.html">Python</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../usage/data.html">Data Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage/set-freesurfer.html">Usage: SET with FreeSurfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage/set-civet.html">Usage: SET with CIVET</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Run HCP</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../usage/hcp.html">Usage for HCP</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ref/ref.html">References</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../license/license.html">License</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SET-documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Setup  dev (without singularity)</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/setup/setupdev.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="setup-dev-without-singularity">
+<h1>Setup  dev (without singularity)<a class="headerlink" href="#setup-dev-without-singularity" title="Permalink to this headline">¶</a></h1>
+<p>tested on Linux : Ubuntu 16.04-18.04 and Mint 18-19</p>
+<div class="section" id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">sed</span> <span class="o">-</span><span class="n">i</span> <span class="s1">&#39;s/main/main restricted universe/g&#39;</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">apt</span><span class="o">/</span><span class="n">sources</span><span class="o">.</span><span class="n">list</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">update</span> <span class="o">&amp;&amp;</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="o">-</span><span class="n">y</span> <span class="n">upgrade</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="o">-</span><span class="n">y</span>  <span class="n">install</span> <span class="n">wget</span>
+<span class="n">sudo</span> <span class="n">wget</span> <span class="o">-</span><span class="n">O</span><span class="o">-</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">neuro</span><span class="o">.</span><span class="n">debian</span><span class="o">.</span><span class="n">net</span><span class="o">/</span><span class="n">lists</span><span class="o">/</span><span class="n">xenial</span><span class="o">.</span><span class="n">us</span><span class="o">-</span><span class="n">ca</span><span class="o">.</span><span class="n">full</span> <span class="o">|</span> <span class="n">tee</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">apt</span><span class="o">/</span><span class="n">sources</span><span class="o">.</span><span class="n">list</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">neurodebian</span><span class="o">.</span><span class="n">sources</span><span class="o">.</span><span class="n">list</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">key</span> <span class="n">adv</span> <span class="o">--</span><span class="n">recv</span><span class="o">-</span><span class="n">keys</span> <span class="o">--</span><span class="n">keyserver</span> <span class="n">pool</span><span class="o">.</span><span class="n">sks</span><span class="o">-</span><span class="n">keyservers</span><span class="o">.</span><span class="n">net</span> <span class="mi">2649</span><span class="n">A5A9</span> <span class="o">||</span> <span class="p">{</span> <span class="n">wget</span> <span class="o">-</span><span class="n">q</span> <span class="o">-</span><span class="n">O</span><span class="o">-</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">neuro</span><span class="o">.</span><span class="n">debian</span><span class="o">.</span><span class="n">net</span><span class="o">/</span><span class="n">_static</span><span class="o">/</span><span class="n">neuro</span><span class="o">.</span><span class="n">debian</span><span class="o">.</span><span class="n">net</span><span class="o">.</span><span class="n">asc</span> <span class="o">|</span> <span class="n">apt</span><span class="o">-</span><span class="n">key</span> <span class="n">add</span> <span class="o">-</span><span class="p">;</span> <span class="p">}</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">update</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="o">-</span><span class="n">y</span> <span class="n">install</span> <span class="n">git</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="o">-</span><span class="n">y</span> <span class="n">install</span> <span class="n">build</span><span class="o">-</span><span class="n">essential</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="o">-</span><span class="n">y</span> <span class="n">install</span> <span class="n">zlib1g</span><span class="o">-</span><span class="n">dev</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="o">-</span><span class="n">y</span> <span class="n">install</span> <span class="n">g</span><span class="o">++</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="o">-</span><span class="n">y</span> <span class="n">install</span> <span class="n">gcc</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="o">-</span><span class="n">y</span> <span class="n">install</span> <span class="n">libc6</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="o">-</span><span class="n">y</span> <span class="n">install</span> <span class="n">libstdc</span><span class="o">++</span><span class="mi">6</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="o">-</span><span class="n">y</span> <span class="n">install</span> <span class="n">imagemagick</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="o">-</span><span class="n">y</span> <span class="n">install</span> <span class="n">perl</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="o">-</span><span class="n">y</span> <span class="n">install</span> <span class="n">p7zip</span><span class="o">-</span><span class="n">full</span>
+
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="o">-</span><span class="n">y</span> <span class="n">install</span> <span class="n">python</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="o">-</span><span class="n">y</span> <span class="n">install</span> <span class="n">python</span><span class="o">-</span><span class="n">dev</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="o">-</span><span class="n">y</span> <span class="n">install</span> <span class="n">python</span><span class="o">-</span><span class="n">pip</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="o">-</span><span class="n">y</span> <span class="n">install</span> <span class="n">python</span><span class="o">-</span><span class="n">tk</span>
+
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="o">-</span><span class="n">y</span> <span class="n">install</span> <span class="n">libeigen3</span><span class="o">-</span><span class="n">dev</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="o">-</span><span class="n">y</span> <span class="n">install</span> <span class="n">libqt4</span><span class="o">-</span><span class="n">opengl</span><span class="o">-</span><span class="n">dev</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="o">-</span><span class="n">y</span> <span class="n">install</span> <span class="n">libgl1</span><span class="o">-</span><span class="n">mesa</span><span class="o">-</span><span class="n">dev</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="o">-</span><span class="n">y</span> <span class="n">install</span> <span class="n">libfftw3</span><span class="o">-</span><span class="n">dev</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="o">-</span><span class="n">y</span> <span class="n">install</span> <span class="n">libtiff5</span><span class="o">-</span><span class="n">dev</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="o">-</span><span class="n">y</span> <span class="n">install</span> <span class="n">clang</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="o">-</span><span class="n">y</span> <span class="n">install</span> <span class="n">libblas</span><span class="o">-</span><span class="n">dev</span> <span class="n">liblapack</span><span class="o">-</span><span class="n">dev</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="o">-</span><span class="n">y</span> <span class="n">install</span> <span class="n">libgsl0</span><span class="o">-</span><span class="n">dev</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="o">-</span><span class="n">y</span> <span class="n">install</span> <span class="n">libgsl2</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="o">-</span><span class="n">y</span> <span class="n">install</span> <span class="n">xvfb</span>
+
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="o">-</span><span class="n">y</span> <span class="n">install</span> <span class="n">fsl</span><span class="o">-</span><span class="mf">5.0</span><span class="o">-</span><span class="n">eddy</span><span class="o">-</span><span class="n">nonfree</span><span class="o">=</span><span class="mf">5.0</span><span class="o">.</span><span class="mi">9</span><span class="o">-</span><span class="mi">1</span><span class="o">~</span><span class="n">nd16</span><span class="o">.</span><span class="mi">04</span><span class="o">+</span><span class="mi">1</span>
+
+<span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">upgrade</span> <span class="n">pip</span><span class="o">==</span><span class="mf">20.1</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="n">setuptools</span><span class="o">==</span><span class="mf">40.2</span><span class="o">.</span><span class="mi">0</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="python">
+<h2>Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h2>
+<p>See python section</p>
+</div>
+<div class="section" id="other-tools-ants-mrtrix3-freesurfer">
+<h2>Other tools (ANTs, MRtrix3, Freesurfer)<a class="headerlink" href="#other-tools-ants-mrtrix3-freesurfer" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Cmake</span>
+<span class="n">cd</span> <span class="o">~/</span><span class="n">opt</span>
+<span class="n">wget</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">Kitware</span><span class="o">/</span><span class="n">CMake</span><span class="o">/</span><span class="n">releases</span><span class="o">/</span><span class="n">download</span><span class="o">/</span><span class="n">v3</span><span class="o">.</span><span class="mf">13.2</span><span class="o">/</span><span class="n">cmake</span><span class="o">-</span><span class="mf">3.13</span><span class="o">.</span><span class="mf">2.</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span>
+<span class="n">tar</span> <span class="o">-</span><span class="n">xvzf</span> <span class="n">cmake</span><span class="o">-</span><span class="mf">3.13</span><span class="o">.</span><span class="mf">2.</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span>
+<span class="n">rm</span> <span class="o">-</span><span class="n">f</span> <span class="n">cmake</span><span class="o">-</span><span class="mf">3.13</span><span class="o">.</span><span class="mf">2.</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span>
+<span class="n">cd</span> <span class="n">cmake</span><span class="o">-</span><span class="mf">3.13</span><span class="o">.</span><span class="mi">2</span>
+<span class="o">./</span><span class="n">bootstrap</span>
+<span class="n">make</span> <span class="o">-</span><span class="n">j</span> <span class="mi">6</span>
+<span class="n">make</span> <span class="n">install</span>
+
+<span class="c1"># FSL</span>
+<span class="n">wget</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">fsl</span><span class="o">.</span><span class="n">fmrib</span><span class="o">.</span><span class="n">ox</span><span class="o">.</span><span class="n">ac</span><span class="o">.</span><span class="n">uk</span><span class="o">/</span><span class="n">fsldownloads</span><span class="o">/</span><span class="n">patches</span><span class="o">/</span><span class="n">eddy</span><span class="o">-</span><span class="n">patch</span><span class="o">-</span><span class="n">fsl</span><span class="o">-</span><span class="mf">5.0</span><span class="o">.</span><span class="mi">11</span><span class="o">/</span><span class="n">centos6</span><span class="o">/</span><span class="n">eddy_openmp</span>
+<span class="n">chmod</span> <span class="o">+</span><span class="n">x</span> <span class="n">eddy_openmp</span>
+<span class="n">mv</span> <span class="n">eddy_openmp</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">fsl</span><span class="o">/</span><span class="mf">5.0</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">eddy_openmp</span>
+
+<span class="n">wget</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">developer</span><span class="o">.</span><span class="n">download</span><span class="o">.</span><span class="n">nvidia</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">compute</span><span class="o">/</span><span class="n">cuda</span><span class="o">/</span><span class="n">repos</span><span class="o">/</span><span class="n">ubuntu1604</span><span class="o">/</span><span class="n">x86_64</span><span class="o">/</span><span class="n">cuda</span><span class="o">-</span><span class="n">repo</span><span class="o">-</span><span class="n">ubuntu1604_8</span><span class="o">.</span><span class="mf">0.61</span><span class="o">-</span><span class="mi">1</span><span class="n">_amd64</span><span class="o">.</span><span class="n">deb</span>
+<span class="n">dpkg</span> <span class="o">-</span><span class="n">i</span> <span class="n">cuda</span><span class="o">-</span><span class="n">repo</span><span class="o">-</span><span class="n">ubuntu1604_8</span><span class="o">.</span><span class="mf">0.61</span><span class="o">-</span><span class="mi">1</span><span class="n">_amd64</span><span class="o">.</span><span class="n">deb</span>
+<span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">update</span>
+<span class="n">DEBIAN_FRONTEND</span><span class="o">=</span><span class="n">noninteractive</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="o">-</span><span class="n">y</span> <span class="n">install</span> <span class="n">cuda</span><span class="o">-</span><span class="n">runtime</span><span class="o">-</span><span class="mi">8</span><span class="o">-</span><span class="mi">0</span>
+
+<span class="n">wget</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">fsl</span><span class="o">.</span><span class="n">fmrib</span><span class="o">.</span><span class="n">ox</span><span class="o">.</span><span class="n">ac</span><span class="o">.</span><span class="n">uk</span><span class="o">/</span><span class="n">fsldownloads</span><span class="o">/</span><span class="n">patches</span><span class="o">/</span><span class="n">eddy</span><span class="o">-</span><span class="n">patch</span><span class="o">-</span><span class="n">fsl</span><span class="o">-</span><span class="mf">5.0</span><span class="o">.</span><span class="mi">11</span><span class="o">/</span><span class="n">centos6</span><span class="o">/</span><span class="n">eddy_cuda8</span><span class="o">.</span><span class="mi">0</span>
+<span class="n">chmod</span> <span class="o">+</span><span class="n">x</span> <span class="n">eddy_cuda8</span><span class="o">.</span><span class="mi">0</span>
+<span class="n">mv</span> <span class="n">eddy_cuda8</span><span class="o">.</span><span class="mi">0</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">fsl</span><span class="o">/</span><span class="mf">5.0</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">eddy_cuda</span>
+
+<span class="c1"># ANTs</span>
+<span class="n">cd</span> <span class="o">~/</span><span class="n">opt</span>
+<span class="n">mkdir</span> <span class="n">ants_build</span>
+<span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">ANTsX</span><span class="o">/</span><span class="n">ANTs</span><span class="o">.</span><span class="n">git</span>
+<span class="n">cd</span> <span class="n">ANTs</span>
+<span class="n">git</span> <span class="n">fetch</span> <span class="o">--</span><span class="n">tags</span>
+<span class="n">git</span> <span class="n">checkout</span> <span class="n">tags</span><span class="o">/</span><span class="n">v2</span><span class="o">.</span><span class="mf">3.1</span> <span class="o">-</span><span class="n">b</span> <span class="n">v2</span><span class="o">.</span><span class="mf">3.1</span>
+<span class="n">cd</span> <span class="o">../</span><span class="n">ants_build</span>
+<span class="n">cmake</span> <span class="o">../</span><span class="n">ANTs</span>
+<span class="n">make</span> <span class="o">-</span><span class="n">j</span> <span class="mi">6</span>
+<span class="n">cp</span> <span class="o">../</span><span class="n">ANTs</span><span class="o">/</span><span class="n">Scripts</span><span class="o">/*.</span><span class="n">sh</span> <span class="nb">bin</span><span class="o">/</span>
+
+<span class="c1"># MRtrix</span>
+<span class="n">cd</span> <span class="o">~/</span><span class="n">opt</span>
+<span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">MRtrix3</span><span class="o">/</span><span class="n">mrtrix3</span><span class="o">.</span><span class="n">git</span>
+<span class="n">cd</span> <span class="n">mrtrix3</span>
+<span class="n">git</span> <span class="n">fetch</span> <span class="o">--</span><span class="n">tags</span>
+<span class="n">git</span> <span class="n">checkout</span> <span class="n">tags</span><span class="o">/</span><span class="mf">3.0</span><span class="n">_RC3</span> <span class="o">-</span><span class="n">b</span> <span class="mf">3.0</span><span class="n">_RC3</span>
+<span class="o">./</span><span class="n">configure</span>
+<span class="o">./</span><span class="n">build</span>
+
+<span class="c1"># Freesurfer</span>
+<span class="n">cd</span> <span class="o">~/</span><span class="n">opt</span>
+<span class="n">wget</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">surfer</span><span class="o">.</span><span class="n">nmr</span><span class="o">.</span><span class="n">mgh</span><span class="o">.</span><span class="n">harvard</span><span class="o">.</span><span class="n">edu</span><span class="o">/</span><span class="n">pub</span><span class="o">/</span><span class="n">dist</span><span class="o">/</span><span class="n">freesurfer</span><span class="o">/</span><span class="mf">6.0</span><span class="o">.</span><span class="mi">1</span><span class="o">/</span><span class="n">freesurfer</span><span class="o">-</span><span class="n">Linux</span><span class="o">-</span><span class="n">centos6_x86_64</span><span class="o">-</span><span class="n">stable</span><span class="o">-</span><span class="n">pub</span><span class="o">-</span><span class="n">v6</span><span class="o">.</span><span class="mf">0.1</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span>
+<span class="n">tar</span> <span class="n">zxvf</span> <span class="n">freesurfer</span><span class="o">-</span><span class="n">Linux</span><span class="o">-</span><span class="n">centos6_x86_64</span><span class="o">-</span><span class="n">stable</span><span class="o">-</span><span class="n">pub</span><span class="o">-</span><span class="n">v6</span><span class="o">.</span><span class="mf">0.1</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span>
+<span class="n">rm</span> <span class="n">freesurfer</span><span class="o">-</span><span class="n">Linux</span><span class="o">-</span><span class="n">centos6_x86_64</span><span class="o">-</span><span class="n">stable</span><span class="o">-</span><span class="n">pub</span><span class="o">-</span><span class="n">v6</span><span class="o">.</span><span class="mf">0.1</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span>
+<span class="n">sed</span> <span class="o">-</span><span class="n">i</span> <span class="s2">&quot;s/source $FREESURFER/bash $FREESURFER/g&quot;</span> <span class="o">/</span><span class="n">freesurfer</span><span class="o">/</span><span class="n">freesurfer</span><span class="o">/</span><span class="n">SetUpFreeSurfer</span><span class="o">.</span><span class="n">sh</span>
+
+<span class="n">echo</span> <span class="s2">&quot;TODO :  mv license.txt opt/freesurfer/&quot;</span>
+
+
+<span class="c1"># PATH variables</span>
+<span class="n">echo</span> <span class="s1">&#39;export PATH=$</span><span class="si">{HOME}</span><span class="s1">/opt/mrtrix3/bin:$PATH&#39;</span> <span class="o">&gt;&gt;</span> <span class="o">~/.</span><span class="n">bashrc</span>
+
+<span class="n">echo</span> <span class="s1">&#39;export ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS=8&#39;</span> <span class="o">&gt;&gt;</span> <span class="o">~/.</span><span class="n">bashrc</span>
+<span class="n">echo</span> <span class="s1">&#39;export ANTSPATH=$</span><span class="si">{HOME}</span><span class="s1">/opt/ants_build/bin&#39;</span> <span class="o">&gt;&gt;</span> <span class="o">~/.</span><span class="n">bashrc</span>
+<span class="n">echo</span> <span class="s1">&#39;export PATH=$PATH:$ANTSPATH&#39;</span> <span class="o">&gt;&gt;</span> <span class="o">~/.</span><span class="n">bashrc</span>
+
+<span class="n">echo</span> <span class="s1">&#39;export FREESURFER_HOME=$</span><span class="si">{HOME}</span><span class="s1">/opt/freesurfer/&#39;</span> <span class="o">&gt;&gt;</span> <span class="o">~/.</span><span class="n">bashrc</span>
+<span class="n">echo</span> <span class="s1">&#39;export SUBJECTS_DIR=$FREESURFER_HOME/subjects&#39;</span> <span class="o">&gt;&gt;</span> <span class="o">~/.</span><span class="n">bashrc</span>
+<span class="n">echo</span> <span class="s1">&#39;export FUNCTIONALS_DIR=$FREESURFER_HOME/sessions&#39;</span> <span class="o">&gt;&gt;</span> <span class="o">~/.</span><span class="n">bashrc</span>
+<span class="n">echo</span> <span class="s1">&#39;export FSFAST_HOME=$FREESURFER_HOME/fsfast&#39;</span> <span class="o">&gt;&gt;</span> <span class="o">~/.</span><span class="n">bashrc</span>
+<span class="n">echo</span> <span class="s1">&#39;export MNI_DIR=$FREESURFER_HOME/mni&#39;</span> <span class="o">&gt;&gt;</span> <span class="o">~/.</span><span class="n">bashrc</span>
+<span class="n">echo</span> <span class="s1">&#39;export MINC_BIN_DIR=$FREESURFER_HOME/mni/bin&#39;</span> <span class="o">&gt;&gt;</span> <span class="o">~/.</span><span class="n">bashrc</span>
+<span class="n">echo</span> <span class="s1">&#39;export MINC_LIB_DIR=$FREESURFER_HOME/mni/lib&#39;</span> <span class="o">&gt;&gt;</span> <span class="o">~/.</span><span class="n">bashrc</span>
+<span class="n">echo</span> <span class="s1">&#39;export MNI_PERL5LIB=$FREESURFER_HOME/mni/share/perl5&#39;</span> <span class="o">&gt;&gt;</span> <span class="o">~/.</span><span class="n">bashrc</span>
+<span class="n">echo</span> <span class="s1">&#39;export PERL5LIB=$MNI_PERL5LIB&#39;</span> <span class="o">&gt;&gt;</span> <span class="o">~/.</span><span class="n">bashrc</span>
+<span class="n">echo</span> <span class="s1">&#39;export LOCAL_DIR=$FREESURFER_HOME/local&#39;</span> <span class="o">&gt;&gt;</span> <span class="o">~/.</span><span class="n">bashrc</span>
+
+<span class="n">echo</span> <span class="s1">&#39;export PATH=$FREESURFER_HOME/bin:$FSFAST_HOME/bin:$PATH&#39;</span> <span class="o">&gt;&gt;</span> <span class="o">~/.</span><span class="n">bashrc</span>
+<span class="n">echo</span> <span class="s1">&#39;export PATH=$MINC_BIN_DIR:$PATH&#39;</span> <span class="o">&gt;&gt;</span> <span class="o">~/.</span><span class="n">bashrc</span>
+
+<span class="n">echo</span> <span class="s1">&#39;export FSLDIR=/usr/share/fsl/5.0&#39;</span> <span class="o">&gt;&gt;</span> <span class="o">~/.</span><span class="n">bashrc</span>
+<span class="n">echo</span> <span class="s1">&#39;source $</span><span class="si">{FSLDIR}</span><span class="s1">/etc/fslconf/fsl.sh&#39;</span> <span class="o">&gt;&gt;</span> <span class="o">~/.</span><span class="n">bashrc</span>
+<span class="n">echo</span> <span class="s1">&#39;export PATH=$</span><span class="si">{FSLDIR}</span><span class="s1">/bin:$</span><span class="si">{PATH}</span><span class="s1">&#39;</span> <span class="o">&gt;&gt;</span> <span class="o">~/.</span><span class="n">bashrc</span>
+<span class="n">echo</span> <span class="s1">&#39;export OPENBLAS_NUM_THREADS=1&#39;</span> <span class="o">&gt;&gt;</span> <span class="o">~/.</span><span class="n">bashrc</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="minc-tools-civet">
+<h2>MINC tools (CIVET)<a class="headerlink" href="#minc-tools-civet" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">wget</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">packages</span><span class="o">.</span><span class="n">bic</span><span class="o">.</span><span class="n">mni</span><span class="o">.</span><span class="n">mcgill</span><span class="o">.</span><span class="n">ca</span><span class="o">/</span><span class="n">minc</span><span class="o">-</span><span class="n">toolkit</span><span class="o">/</span><span class="n">Debian</span><span class="o">/</span><span class="n">minc</span><span class="o">-</span><span class="n">toolkit</span><span class="o">-</span><span class="mf">1.9</span><span class="o">.</span><span class="mi">16</span><span class="o">-</span><span class="mi">20180117</span><span class="o">-</span><span class="n">Ubuntu_16</span><span class="o">.</span><span class="mi">04</span><span class="o">-</span><span class="n">x86_64</span><span class="o">.</span><span class="n">deb</span>
+<span class="n">wget</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">packages</span><span class="o">.</span><span class="n">bic</span><span class="o">.</span><span class="n">mni</span><span class="o">.</span><span class="n">mcgill</span><span class="o">.</span><span class="n">ca</span><span class="o">/</span><span class="n">minc</span><span class="o">-</span><span class="n">toolkit</span><span class="o">/</span><span class="n">Debian</span><span class="o">/</span><span class="n">beast</span><span class="o">-</span><span class="n">library</span><span class="o">-</span><span class="mf">1.1</span><span class="o">.</span><span class="mi">0</span><span class="o">-</span><span class="mf">20121212.</span><span class="n">deb</span>
+<span class="n">wget</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">packages</span><span class="o">.</span><span class="n">bic</span><span class="o">.</span><span class="n">mni</span><span class="o">.</span><span class="n">mcgill</span><span class="o">.</span><span class="n">ca</span><span class="o">/</span><span class="n">minc</span><span class="o">-</span><span class="n">toolkit</span><span class="o">/</span><span class="n">Debian</span><span class="o">/</span><span class="n">bic</span><span class="o">-</span><span class="n">mni</span><span class="o">-</span><span class="n">models</span><span class="o">-</span><span class="mf">0.1</span><span class="o">.</span><span class="mi">1</span><span class="o">-</span><span class="mf">20120421.</span><span class="n">deb</span>
+<span class="n">dpkg</span> <span class="o">-</span><span class="n">i</span> <span class="n">minc</span><span class="o">-</span><span class="n">toolkit</span><span class="o">-</span><span class="mf">1.9</span><span class="o">.</span><span class="mi">16</span><span class="o">-</span><span class="mi">20180117</span><span class="o">-</span><span class="n">Ubuntu_16</span><span class="o">.</span><span class="mi">04</span><span class="o">-</span><span class="n">x86_64</span><span class="o">.</span><span class="n">deb</span> <span class="n">beast</span><span class="o">-</span><span class="n">library</span><span class="o">-</span><span class="mf">1.1</span><span class="o">.</span><span class="mi">0</span><span class="o">-</span><span class="mf">20121212.</span><span class="n">deb</span> <span class="n">bic</span><span class="o">-</span><span class="n">mni</span><span class="o">-</span><span class="n">models</span><span class="o">-</span><span class="mf">0.1</span><span class="o">.</span><span class="mi">1</span><span class="o">-</span><span class="mf">20120421.</span><span class="n">deb</span>
+<span class="n">rm</span> <span class="o">-</span><span class="n">f</span> <span class="n">minc</span><span class="o">-</span><span class="n">toolkit</span><span class="o">-</span><span class="mf">1.9</span><span class="o">.</span><span class="mi">16</span><span class="o">-</span><span class="mi">20180117</span><span class="o">-</span><span class="n">Ubuntu_16</span><span class="o">.</span><span class="mi">04</span><span class="o">-</span><span class="n">x86_64</span><span class="o">.</span><span class="n">deb</span> <span class="n">beast</span><span class="o">-</span><span class="n">library</span><span class="o">-</span><span class="mf">1.1</span><span class="o">.</span><span class="mi">0</span><span class="o">-</span><span class="mf">20121212.</span><span class="n">deb</span> <span class="n">bic</span><span class="o">-</span><span class="n">mni</span><span class="o">-</span><span class="n">models</span><span class="o">-</span><span class="mf">0.1</span><span class="o">.</span><span class="mi">1</span><span class="o">-</span><span class="mf">20120421.</span><span class="n">deb</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="civet-labels">
+<h2>CIVET Labels<a class="headerlink" href="#civet-labels" title="Permalink to this headline">¶</a></h2>
+<p>civet2_dkt.tar.bz2 &amp; civet2_aal.tar.bz2</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>mkdir  ~/src_set/civet2_dkt
+mkdir  ~/src_set/civet2_aal
+tar -jxf civet2_dkt.tar.bz2 -C $SINGULARITY_ROOTFS/civet2_dkt
+tar -jxf civet2_aal.tar.bz2 -C $SINGULARITY_ROOTFS/civet2_aal
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="cluster.html" class="btn btn-neutral float-right" title="Setup on cluster" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="setup.html" class="btn btn-neutral float-left" title="Setup with singularity" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Etienne St-Onge
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,5 +1,5 @@
-Setup
-=====
+Setup with singularity
+======================
 
 Linux based system only
 
@@ -11,13 +11,15 @@ Requirements
     sudo apt-get update && sudo apt-get install -y \
         build-essential \
         uuid-dev \
+        libssl-dev \
         libgpgme-dev \
         squashfs-tools \
         libseccomp-dev \
         wget \
         pkg-config \
         git \
-        cryptsetup-bin
+        cryptsetup-bin \
+        default-jre
 
     cd ~/opt
     export VERSION=1.13.5 OS=linux ARCH=amd64 && \
@@ -72,8 +74,7 @@ Other tools (ANTs, MRtrix3, Freesurfer)
     cd cmake-3.13.2
     ./bootstrap
     make -j 6
-    make install
-
+    sudo make install
 
     # ANTs
     cd ~/opt
@@ -87,7 +88,6 @@ Other tools (ANTs, MRtrix3, Freesurfer)
     make -j 6
     cp ../ANTs/Scripts/*.sh bin/
 
-
     # MRtrix
     cd ~/opt
     git clone https://github.com/MRtrix3/mrtrix3.git
@@ -95,13 +95,13 @@ Other tools (ANTs, MRtrix3, Freesurfer)
     git fetch --tags
     git checkout tags/3.0_RC3 -b 3.0_RC3
     ./configure
-    ./build
+    ./
 
     # Freesurfer
     cd ~/opt
     wget https://surfer.nmr.mgh.harvard.edu/pub/dist/freesurfer/6.0.1/freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.1.tar.gz
     tar zxvf freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.1.tar.gz
     rm freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.1.tar.gz
-    sed -i "s/source $FREESURFER/bash $FREESURFER/g" /freesurfer/freesurfer/SetUpFreeSurfer.sh
+    sed -i "s/source $FREESURFER/bash $FREESURFER/g" ${HOME}/opt/freesurfer/SetUpFreeSurfer.sh
 
     echo "TODO :  mv license.txt opt/freesurfer/"

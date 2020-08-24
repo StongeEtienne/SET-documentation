@@ -35,7 +35,7 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Usage for HCP" href="../usage/hcp.html" />
+    <link rel="next" title="Data Requirements" href="../usage/data.html" />
     <link rel="prev" title="Setup on cluster" href="cluster.html" /> 
 </head>
 
@@ -82,15 +82,23 @@
             
               <p class="caption"><span class="caption-text">Setup</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="setup.html">Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup.html">Setup with singularity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setupdev.html">Setup  dev (without singularity)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cluster.html">Setup on cluster</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Python</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#requirements">Requirements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#annaconda">Annaconda</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#python-3-7-for-tractoflow-scilpy">Python 3.7 (for tractoflow, scilpy)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#python-2-7-for-set-scilpy-old">Python 2.7 (for set, scilpy_old)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#python-3-7-for-scilpy-dev">Python 3.7 (for scilpy DEV)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#python-2-7-for-set-dev">Python 2.7 (for set DEV)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#python-2-7-for-set-nf">Python 2.7 (for set-nf)</a></li>
 </ul>
 </li>
+</ul>
+<p class="caption"><span class="caption-text">Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../usage/data.html">Data Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage/set-freesurfer.html">Usage: SET with FreeSurfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage/set-civet.html">Usage: SET with CIVET</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Run HCP</span></p>
 <ul>
@@ -172,32 +180,23 @@
 Guide to setup python to run/develop SET-pipeline without singularity image</p>
 <div class="section" id="requirements">
 <h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">update</span> <span class="o">&amp;&amp;</span> <span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> \
-    <span class="n">build</span><span class="o">-</span><span class="n">essential</span> \
-    <span class="n">uuid</span><span class="o">-</span><span class="n">dev</span> \
-    <span class="n">libgpgme</span><span class="o">-</span><span class="n">dev</span> \
-    <span class="n">squashfs</span><span class="o">-</span><span class="n">tools</span> \
-    <span class="n">libseccomp</span><span class="o">-</span><span class="n">dev</span> \
-    <span class="n">wget</span> \
-    <span class="n">pkg</span><span class="o">-</span><span class="n">config</span> \
-    <span class="n">git</span> \
-    <span class="n">cryptsetup</span><span class="o">-</span><span class="nb">bin</span>
-</pre></div>
-</div>
+<p>See Setup for basic requirements</p>
+<p>or Setup Dev for full requirements</p>
 </div>
 <div class="section" id="annaconda">
 <h2>Annaconda<a class="headerlink" href="#annaconda" title="Permalink to this headline">¶</a></h2>
+<p>Always use environments with anaconda.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">wget</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">repo</span><span class="o">.</span><span class="n">anaconda</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">archive</span><span class="o">/</span><span class="n">Anaconda3</span><span class="o">-</span><span class="mf">2020.07</span><span class="o">-</span><span class="n">Linux</span><span class="o">-</span><span class="n">x86_64</span><span class="o">.</span><span class="n">sh</span>
 <span class="n">bash</span> <span class="n">Anaconda3</span><span class="o">-</span><span class="mf">2020.07</span><span class="o">-</span><span class="n">Linux</span><span class="o">-</span><span class="n">x86_64</span><span class="o">.</span><span class="n">sh</span>
 
 <span class="n">source</span> <span class="o">~/.</span><span class="n">bashrc</span>
-<span class="c1"># Remove the default install  (ALWAYS USE ENVIRONMENT)</span>
+<span class="c1"># Remove the default install</span>
 <span class="n">conda</span> <span class="n">config</span> <span class="o">--</span><span class="nb">set</span> <span class="n">auto_activate_base</span> <span class="n">false</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="python-3-7-for-tractoflow-scilpy">
-<h2>Python 3.7 (for tractoflow, scilpy)<a class="headerlink" href="#python-3-7-for-tractoflow-scilpy" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="python-3-7-for-scilpy-dev">
+<h2>Python 3.7 (for scilpy DEV)<a class="headerlink" href="#python-3-7-for-scilpy-dev" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">create</span> <span class="o">-</span><span class="n">n</span> <span class="n">set37</span> <span class="n">python</span><span class="o">=</span><span class="mf">3.7</span>
 <span class="n">conda</span> <span class="n">activate</span> <span class="n">set37</span>
 
@@ -212,8 +211,8 @@ Guide to setup python to run/develop SET-pipeline without singularity image</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="python-2-7-for-set-scilpy-old">
-<h2>Python 2.7 (for set, scilpy_old)<a class="headerlink" href="#python-2-7-for-set-scilpy-old" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="python-2-7-for-set-dev">
+<h2>Python 2.7 (for set DEV)<a class="headerlink" href="#python-2-7-for-set-dev" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>conda create -n set27 python=2.7
 conda activate set27
 
@@ -233,6 +232,7 @@ pip install nibabel==2.4.0
 pip install git+https://github.com/MarcCote/tractconverter@master#tractconverter
 pip install fury==0.4.0
 pip install dipy==0.16.0
+pip install trimeshpy==0.0.2
 
 cd ~
 mkdir src/
@@ -242,6 +242,52 @@ cd scilpy_b
 
 python setup.py build_all
 pip install -e .
+</pre></div>
+</div>
+</div>
+<div class="section" id="python-2-7-for-set-nf">
+<h2>Python 2.7 (for set-nf)<a class="headerlink" href="#python-2-7-for-set-nf" title="Permalink to this headline">¶</a></h2>
+<p>set_dipy.tar.bz2 &amp; set_scilpy.tar.bz2</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">create</span> <span class="o">-</span><span class="n">n</span> <span class="n">set27</span> <span class="n">python</span><span class="o">=</span><span class="mf">2.7</span>
+<span class="n">conda</span> <span class="n">activate</span> <span class="n">set27</span>
+
+<span class="n">conda</span> <span class="n">install</span> <span class="n">numpy</span> <span class="n">scipy</span> <span class="n">matplotlib</span> <span class="n">ipython</span> <span class="n">jupyter</span> <span class="n">cython</span>
+
+<span class="n">pip</span> <span class="n">install</span> <span class="n">h5py</span><span class="o">==</span><span class="mf">2.9</span><span class="o">.</span><span class="mi">0</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="n">imageio</span><span class="o">==</span><span class="mf">2.4</span><span class="o">.</span><span class="mi">1</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="n">moviepy</span><span class="o">==</span><span class="mf">0.2</span><span class="o">.</span><span class="mf">3.5</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="n">openpyxl</span><span class="o">==</span><span class="mf">2.4</span><span class="o">.</span><span class="mi">8</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="n">pandas</span><span class="o">==</span><span class="mf">0.20</span><span class="o">.</span><span class="mi">3</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="n">Pillow</span><span class="o">==</span><span class="mf">5.2</span><span class="o">.</span><span class="mi">0</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="n">requests</span><span class="o">==</span><span class="mf">2.19</span><span class="o">.</span><span class="mi">1</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="n">scikit</span><span class="o">-</span><span class="n">learn</span><span class="o">==</span><span class="mf">0.19</span><span class="o">.</span><span class="mi">0</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="n">vtk</span><span class="o">==</span><span class="mf">8.1</span><span class="o">.</span><span class="mi">2</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="n">PyMCubes</span><span class="o">==</span><span class="mf">0.0</span><span class="o">.</span><span class="mi">9</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="n">nibabel</span><span class="o">==</span><span class="mf">2.4</span><span class="o">.</span><span class="mi">0</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="n">git</span><span class="o">+</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">MarcCote</span><span class="o">/</span><span class="n">tractconverter</span><span class="nd">@master</span><span class="c1">#tractconverter</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="n">fury</span><span class="o">==</span><span class="mf">0.4</span><span class="o">.</span><span class="mi">0</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="n">dipy</span><span class="o">==</span><span class="mf">0.16</span><span class="o">.</span><span class="mi">0</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="n">cythongsl</span><span class="o">==</span><span class="mf">0.2</span><span class="o">.</span><span class="mi">2</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="n">trimeshpy</span><span class="o">==</span><span class="mf">0.0</span><span class="o">.</span><span class="mi">2</span>
+
+<span class="c1"># unzip packages</span>
+<span class="n">mkdir</span> <span class="o">~/</span><span class="n">src_set</span>
+<span class="n">mkdir</span> <span class="o">~/</span><span class="n">src_set</span><span class="o">/</span><span class="n">dipy</span>
+<span class="n">tar</span> <span class="o">-</span><span class="n">jxf</span> <span class="n">set_dipy</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">bz2</span> <span class="o">-</span><span class="n">C</span> <span class="o">~/</span><span class="n">src_set</span><span class="o">/</span><span class="n">dipy</span>
+
+<span class="n">mkdir</span> <span class="o">~/</span><span class="n">src_set</span><span class="o">/</span><span class="n">scilpy</span>
+<span class="n">tar</span> <span class="o">-</span><span class="n">jxf</span> <span class="n">set_scilpy</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">bz2</span> <span class="o">-</span><span class="n">C</span> <span class="o">~/</span><span class="n">src_set</span><span class="o">/</span><span class="n">scilpy</span>
+
+
+<span class="c1"># Install dipy</span>
+<span class="n">cd</span>  <span class="o">~/</span><span class="n">src_set</span><span class="o">/</span><span class="n">dipy</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="o">.</span>
+
+<span class="c1"># Install scilpy (SET)</span>
+<span class="n">cd</span> <span class="o">/</span><span class="n">src_set</span><span class="o">/</span><span class="n">scilpy</span>
+<span class="n">python</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">build_all</span>
+<span class="c1">#sed -i &#39;38s/.*/backend : Agg/&#39; /usr/local/lib/python2.7/dist-packages/matplotlib/mpl-data/matplotlibrc</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">e</span> <span class="o">.</span>
 </pre></div>
 </div>
 </div>
@@ -255,7 +301,7 @@ pip install -e .
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../usage/hcp.html" class="btn btn-neutral float-right" title="Usage for HCP" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../usage/data.html" class="btn btn-neutral float-right" title="Data Requirements" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="cluster.html" class="btn btn-neutral float-left" title="Setup on cluster" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

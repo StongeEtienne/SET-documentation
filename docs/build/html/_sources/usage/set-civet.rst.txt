@@ -6,8 +6,10 @@ Download SET package : TODO LINK
 
 Run civet
 ---------
+
 ::
-    input_data = 
+
+    input_data =
 
     mkdir ~/nf/civet_test
     cd ~/nf/civet_test
@@ -22,9 +24,8 @@ Run civet
     sh ~/nf/set_alpha10v0civet-nf/tree_for_tractoflow.sh -f input_data/ -c ~/nf/civet_test -o tractoflow_pve/
 
 
-
 Run Tractoflow (-profile civet_pve)
------------------------
+-----------------------------------
 PROFILE :
 
 ::
