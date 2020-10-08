@@ -1,5 +1,5 @@
-Usage: SET with FreeSurfer
-==========================
+SET with FreeSurfer
+===================
 
 Download SET package : http://scil.dinf.usherbrooke.ca/en/containers_list/
 

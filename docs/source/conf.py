@@ -22,7 +22,7 @@ copyright = '2020, Etienne St-Onge'
 author = 'Etienne St-Onge'
 
 # The full version, including alpha/beta/rc tags
-release = 'alpha0'
+release = 'set1v0'
 
 
 # -- General configuration ---------------------------------------------------

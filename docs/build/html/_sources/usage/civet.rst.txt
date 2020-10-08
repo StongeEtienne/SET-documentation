@@ -1,5 +1,5 @@
-Usage: SET with CIVET
-=====================
+SET with CIVET
+==============
 
 Download SET package : http://scil.dinf.usherbrooke.ca/en/containers_list/
 
@@ -42,8 +42,6 @@ Run Tractoflow (-profile civet_pve)
         -profile civet_pve \
         -with-singularity ~/nf/tractoflow_2.0.0_8b39aee_2019-04-26.img \
         -resume
-
-
 
 
 

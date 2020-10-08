@@ -13,33 +13,43 @@ Surface-enhanced tractography (SET) incorporate cortical surfaces in state-of-th
     Towards quantitative connectivity analysis: reducing tractography biases.
     Neuroimage, 98, pp.266-278.  https://doi.org/10.1016/j.neuroimage.2014.04.074
 
+Setup
+^^^^^
 
 .. toctree::
+    :maxdepth: 1
+
     setup/setup
     setup/setupdev
     setup/cluster
     setup/python
-    :maxdepth: 1
-    :caption: Setup
+
+
+Usage
+^^^^^
 
 .. toctree::
+    :maxdepth: 1
+
     usage/data
     usage/freesurfer
     usage/civet
-    :maxdepth: 1
-    :caption: Usage
+
+HCP
+^^^
 
 .. toctree::
+    :maxdepth: 1
+
     usage/hcp
-    :maxdepth: 1
-    :caption: Run HCP
+
+
+Reference
+^^^^^^^^^
 
 .. toctree::
+    :maxdepth: 1
+
     ref/ref
-    :maxdepth: 1
-    :caption: References
-
-.. toctree::
     license/license
-    :maxdepth: 2
 
