@@ -34,7 +34,9 @@
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" /> 
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Usage: SET with CIVET" href="set-civet.html" />
+    <link rel="prev" title="Data Requirements" href="data.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -80,9 +82,22 @@
             
               <p class="caption"><span class="caption-text">Setup</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../setup/setup.html">Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../setup/setup.html">Setup with singularity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../setup/setupdev.html">Setup  dev (without singularity)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../setup/cluster.html">Setup on cluster</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../setup/python.html">Python</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Usage</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="data.html">Data Requirements</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Usage: SET with FreeSurfer</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#run-freesurfer">Run freesurfer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#run-tractoflow-nextflow">Run Tractoflow Nextflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#run-civet-nf">Run civet-nf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#run-set-nextflow-set-nf">Run SET Nextflow  (set-nf)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="set-civet.html">Usage: SET with CIVET</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Run HCP</span></p>
 <ul>
@@ -160,52 +175,50 @@
             
   <div class="section" id="usage-set-with-freesurfer">
 <h1>Usage: SET with FreeSurfer<a class="headerlink" href="#usage-set-with-freesurfer" title="Permalink to this headline">¶</a></h1>
-<p>Download SET package : TODO LINK</p>
+<p>Download SET package : <a class="reference external" href="http://scil.dinf.usherbrooke.ca/en/containers_list/">http://scil.dinf.usherbrooke.ca/en/containers_list/</a></p>
 <div class="section" id="run-freesurfer">
 <h2>Run freesurfer<a class="headerlink" href="#run-freesurfer" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">recon</span><span class="o">-</span><span class="nb">all</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="run-tractoflow-nextflow">
 <h2>Run Tractoflow Nextflow<a class="headerlink" href="#run-tractoflow-nextflow" title="Permalink to this headline">¶</a></h2>
-<p>PROFILE :</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mkdir</span> <span class="o">~/</span><span class="n">nf</span><span class="o">/</span><span class="n">tf_test</span>
 <span class="n">cd</span> <span class="o">~/</span><span class="n">nf</span><span class="o">/</span><span class="n">tf_test</span>
 
-<span class="n">nextflow</span><span class="o">-</span><span class="mf">20.04</span><span class="o">.</span><span class="mi">1</span><span class="o">-</span><span class="nb">all</span> <span class="n">run</span> <span class="o">~/</span><span class="n">nf</span><span class="o">/</span><span class="n">set_alpha10v0</span><span class="o">/</span><span class="n">tractoflow_stonge</span><span class="o">/</span><span class="n">main</span><span class="o">.</span><span class="n">nf</span> \
+<span class="n">nextflow</span><span class="o">-</span><span class="mf">20.04</span><span class="o">.</span><span class="mi">1</span><span class="o">-</span><span class="nb">all</span> <span class="n">run</span> <span class="o">~/</span><span class="n">nf</span><span class="o">/</span><span class="n">set_1v0</span><span class="o">/</span><span class="n">tractoflow_stonge</span><span class="o">/</span><span class="n">main</span><span class="o">.</span><span class="n">nf</span> \
     <span class="o">--</span><span class="n">root</span> <span class="n">tractoflow_data</span><span class="o">/</span> \
     <span class="o">-</span><span class="n">dti_shells</span> <span class="s2">&quot;0 1000&quot;</span> <span class="o">--</span><span class="n">fodf_shells</span> <span class="s2">&quot;0 1000&quot;</span> \
     <span class="o">-</span><span class="n">profile</span> <span class="n">PROFILE</span> \
     <span class="o">-</span><span class="k">with</span><span class="o">-</span><span class="n">singularity</span> <span class="o">~/</span><span class="n">nf</span><span class="o">/</span><span class="n">tractoflow_2</span><span class="o">.</span><span class="mf">0.0_8</span><span class="n">b39aee_2019</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mf">26.</span><span class="n">img</span> \
     <span class="o">-</span><span class="n">resume</span>
-
-
-<span class="n">recon</span><span class="o">-</span><span class="nb">all</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="run-civet">
-<h2>Run civet<a class="headerlink" href="#run-civet" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="run-civet-nf">
+<h2>Run civet-nf<a class="headerlink" href="#run-civet-nf" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mkdir</span> <span class="o">~/</span><span class="n">nf</span><span class="o">/</span><span class="n">civet_test</span>
 <span class="n">cd</span> <span class="o">~/</span><span class="n">nf</span><span class="o">/</span><span class="n">civet_test</span>
 
 <span class="c1"># Use the online CBRAIN tools and Guide</span>
-<span class="n">nextflow</span><span class="o">-</span><span class="mf">20.04</span><span class="o">.</span><span class="mi">1</span><span class="o">-</span><span class="nb">all</span> <span class="o">~/</span><span class="n">nf</span><span class="o">/</span><span class="n">set_alpha10v0</span><span class="o">/</span><span class="nb">set</span><span class="o">-</span><span class="n">nf</span><span class="o">/</span><span class="n">civet</span><span class="o">-</span><span class="n">nf</span><span class="o">/</span><span class="n">main</span><span class="o">.</span><span class="n">nf</span> \
+<span class="n">nextflow</span><span class="o">-</span><span class="mf">20.04</span><span class="o">.</span><span class="mi">1</span><span class="o">-</span><span class="nb">all</span> <span class="o">~/</span><span class="n">nf</span><span class="o">/</span><span class="n">set_1v0</span><span class="o">/</span><span class="nb">set</span><span class="o">-</span><span class="n">nf</span><span class="o">/</span><span class="n">civet</span><span class="o">-</span><span class="n">nf</span><span class="o">/</span><span class="n">main</span><span class="o">.</span><span class="n">nf</span> \
     <span class="o">--</span><span class="n">civet</span> <span class="n">civet_output</span><span class="o">/</span> \
-    <span class="o">-</span><span class="k">with</span><span class="o">-</span><span class="n">singularity</span> <span class="o">~/</span><span class="n">nf</span><span class="o">/</span><span class="n">set_alpha10v0</span><span class="o">/</span><span class="n">set_alpha10v0</span><span class="o">.</span><span class="n">img</span> \
+    <span class="o">-</span><span class="k">with</span><span class="o">-</span><span class="n">singularity</span> <span class="o">~/</span><span class="n">nf</span><span class="o">/</span><span class="n">set_1v0</span><span class="o">/</span><span class="n">set_1v0</span><span class="o">.</span><span class="n">img</span> \
     <span class="o">-</span><span class="n">resume</span>
 
 <span class="n">cd</span> <span class="o">~/</span><span class="n">nf</span><span class="o">/</span>
-<span class="n">sh</span> <span class="o">~/</span><span class="n">nf</span><span class="o">/</span><span class="n">set_alpha10v0civet</span><span class="o">-</span><span class="n">nf</span><span class="o">/</span><span class="n">tree_for_tractoflow</span><span class="o">.</span><span class="n">sh</span> <span class="o">-</span><span class="n">f</span> <span class="n">tractoflow_data</span><span class="o">/</span> <span class="o">-</span><span class="n">c</span> <span class="o">~/</span><span class="n">nf</span><span class="o">/</span><span class="n">civet_test</span> <span class="o">-</span><span class="n">o</span> <span class="n">tractoflow_data2</span><span class="o">/</span>
+<span class="n">sh</span> <span class="o">~/</span><span class="n">nf</span><span class="o">/</span><span class="n">set_1v0</span><span class="o">/</span><span class="n">civet</span><span class="o">-</span><span class="n">nf</span><span class="o">/</span><span class="n">tree_for_tractoflow</span><span class="o">.</span><span class="n">sh</span> <span class="o">-</span><span class="n">f</span> <span class="n">tractoflow_data</span><span class="o">/</span> <span class="o">-</span><span class="n">c</span> <span class="o">~/</span><span class="n">nf</span><span class="o">/</span><span class="n">civet_test</span> <span class="o">-</span><span class="n">o</span> <span class="n">tractoflow_data2</span><span class="o">/</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="run-set-nextflow-set-nf">
 <h2>Run SET Nextflow  (set-nf)<a class="headerlink" href="#run-set-nextflow-set-nf" title="Permalink to this headline">¶</a></h2>
-<p>PROFILE :</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nextflow</span><span class="o">-</span><span class="mf">20.04</span><span class="o">.</span><span class="mi">1</span><span class="o">-</span><span class="nb">all</span> <span class="n">run</span> <span class="o">~/</span><span class="n">nf</span><span class="o">/</span><span class="n">set_alpha10v0</span><span class="o">/</span><span class="nb">set</span><span class="o">-</span><span class="n">nf</span><span class="o">/</span><span class="n">main</span><span class="o">.</span><span class="n">nf</span> \
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nextflow</span><span class="o">-</span><span class="mf">20.04</span><span class="o">.</span><span class="mi">1</span><span class="o">-</span><span class="nb">all</span> <span class="n">run</span> <span class="o">~/</span><span class="n">nf</span><span class="o">/</span><span class="n">set_1v0</span><span class="o">/</span><span class="nb">set</span><span class="o">-</span><span class="n">nf</span><span class="o">/</span><span class="n">main</span><span class="o">.</span><span class="n">nf</span> \
     <span class="o">--</span><span class="n">tractoflow</span> <span class="n">tractoflow_output</span><span class="o">/</span> \
     <span class="o">--</span><span class="n">surfaces</span> <span class="n">freesurfer_output</span><span class="o">/</span> \
     <span class="o">-</span><span class="n">profile</span> <span class="n">freesurfer_basic</span> \
-    <span class="o">-</span><span class="k">with</span><span class="o">-</span><span class="n">singularity</span> <span class="o">~/</span><span class="n">nf</span><span class="o">/</span><span class="n">set_alpha10v0</span><span class="o">/</span><span class="n">set_alpha10v0</span><span class="o">.</span><span class="n">img</span> \
+    <span class="o">-</span><span class="k">with</span><span class="o">-</span><span class="n">singularity</span> <span class="o">~/</span><span class="n">nf</span><span class="o">/</span><span class="n">set_1v0</span><span class="o">/</span><span class="n">set_1v0</span><span class="o">.</span><span class="n">img</span> \
     <span class="o">-</span><span class="n">resume</span>
 </pre></div>
 </div>
@@ -217,6 +230,15 @@
            
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="set-civet.html" class="btn btn-neutral float-right" title="Usage: SET with CIVET" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="data.html" class="btn btn-neutral float-left" title="Data Requirements" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>

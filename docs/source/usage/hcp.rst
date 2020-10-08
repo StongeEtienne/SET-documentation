@@ -6,13 +6,14 @@ Setup data
 
 
 Run Tractoflow Nextflow  (tractoflow_stonge)
---------------------------
+--------------------------------------------
+
 ::
 
     mkdir /scratch/user/nf/hcp_tf_test
     cd /scratch/user/nf/hcp_tf_test
 
-    nextflow -c /scratch/user/nf/singularity.conf run /scratch/user/nf/set_alpha10v0/tractoflow_stonge/main.nf \
+    nextflow -c /scratch/user/nf/singularity.conf run /scratch/user/nf/set_1v0/tractoflow_stonge/main.nf \
         --root /scratch/user/data/hcp_data/ \
         -profile brain_mask_only \
         --dti_shells "0 1000" --fodf_shells "0 1000 2000 3000" \
@@ -29,18 +30,17 @@ Run Tractoflow Nextflow  (tractoflow_stonge)
 
 Run SET Nextflow  (set-nf)
 --------------------------
-PROFILE :
 
 ::
 
     mkdir /scratch/user/nf/hcp_set_test
     cd /scratch/user/nf/hcp_set_test
 
-    nextflow-20.04.1-all -c /scratch/user/nf/singularity.conf run /scratch/user/nf/set_alpha10v0/set-nf/main.nf \
+    nextflow-20.04.1-all -c /scratch/user/nf/singularity.conf run /scratch/user/nf/set_1v0/set-nf/main.nf \
         --tractoflow /scratch/user/nf/hcp_tf_test/results/ \
         --surfaces /scratch/user/data/hcp_freesurfer/ \
         --nowarp true \
         -profile civet2_dkt \
         -with-report report.html \
-        -with-singularity /scratch/user/nf/set_alpha10v0/set_alpha10v0.img \
+        -with-singularity /scratch/user/nf/set_1v0/set_1v0.img \
         -resume

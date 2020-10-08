@@ -86,7 +86,6 @@
 <li class="toctree-l2"><a class="reference internal" href="#requirements">Requirements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#singularity">Singularity</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#nextflow">Nextflow</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#other-tools-ants-mrtrix3-freesurfer">Other tools (ANTs, MRtrix3, Freesurfer)</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="setupdev.html">Setup  dev (without singularity)</a></li>
@@ -223,50 +222,6 @@ export VERSION=3.5.2 &amp;&amp; # adjust this as necessary \
 <span class="n">wget</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">nextflow</span><span class="o">-</span><span class="n">io</span><span class="o">/</span><span class="n">nextflow</span><span class="o">/</span><span class="n">releases</span><span class="o">/</span><span class="n">download</span><span class="o">/</span><span class="n">v20</span><span class="o">.</span><span class="mf">04.1</span><span class="o">/</span><span class="n">nextflow</span><span class="o">-</span><span class="mf">20.04</span><span class="o">.</span><span class="mi">1</span><span class="o">-</span><span class="nb">all</span>
 <span class="n">chmod</span> <span class="o">+</span><span class="n">x</span> <span class="n">nextflow</span><span class="o">-</span><span class="mf">20.04</span><span class="o">.</span><span class="mi">1</span><span class="o">-</span><span class="nb">all</span>
 <span class="n">echo</span> <span class="s1">&#39;export PATH=$</span><span class="si">{HOME}</span><span class="s1">/opt:$</span><span class="si">{PATH}</span><span class="s1">&#39;</span> <span class="o">&gt;&gt;</span> <span class="o">~/.</span><span class="n">bashrc</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="other-tools-ants-mrtrix3-freesurfer">
-<h2>Other tools (ANTs, MRtrix3, Freesurfer)<a class="headerlink" href="#other-tools-ants-mrtrix3-freesurfer" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># Cmake
-cd ~/opt
-wget https://github.com/Kitware/CMake/releases/download/v3.13.2/cmake-3.13.2.tar.gz
-tar -xvzf cmake-3.13.2.tar.gz
-rm -f cmake-3.13.2.tar.gz
-cd cmake-3.13.2
-./bootstrap
-make -j 6
-sudo make install
-
-# ANTs
-cd ~/opt
-mkdir ants_build
-git clone https://github.com/ANTsX/ANTs.git
-cd ANTs
-git fetch --tags
-git checkout tags/v2.3.1 -b v2.3.1
-cd ../ants_build
-cmake ../ANTs
-make -j 6
-cp ../ANTs/Scripts/*.sh bin/
-
-# MRtrix
-cd ~/opt
-git clone https://github.com/MRtrix3/mrtrix3.git
-cd mrtrix3
-git fetch --tags
-git checkout tags/3.0_RC3 -b 3.0_RC3
-./configure
-./
-
-# Freesurfer
-cd ~/opt
-wget https://surfer.nmr.mgh.harvard.edu/pub/dist/freesurfer/6.0.1/freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.1.tar.gz
-tar zxvf freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.1.tar.gz
-rm freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.1.tar.gz
-sed -i &quot;s/source $FREESURFER/bash $FREESURFER/g&quot; ${HOME}/opt/freesurfer/SetUpFreeSurfer.sh
-
-echo &quot;TODO :  mv license.txt opt/freesurfer/&quot;
 </pre></div>
 </div>
 </div>

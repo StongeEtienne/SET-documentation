@@ -36,7 +36,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="References" href="../ref/ref.html" />
-    <link rel="prev" title="Python" href="../setup/python.html" /> 
+    <link rel="prev" title="Usage: SET with CIVET" href="set-civet.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -82,9 +82,16 @@
             
               <p class="caption"><span class="caption-text">Setup</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../setup/setup.html">Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../setup/setup.html">Setup with singularity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../setup/setupdev.html">Setup  dev (without singularity)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../setup/cluster.html">Setup on cluster</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../setup/python.html">Python</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="data.html">Data Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="set-freesurfer.html">Usage: SET with FreeSurfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="set-civet.html">Usage: SET with CIVET</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Run HCP</span></p>
 <ul class="current">
@@ -175,7 +182,7 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mkdir</span> <span class="o">/</span><span class="n">scratch</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">nf</span><span class="o">/</span><span class="n">hcp_tf_test</span>
 <span class="n">cd</span> <span class="o">/</span><span class="n">scratch</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">nf</span><span class="o">/</span><span class="n">hcp_tf_test</span>
 
-<span class="n">nextflow</span> <span class="o">-</span><span class="n">c</span> <span class="o">/</span><span class="n">scratch</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">nf</span><span class="o">/</span><span class="n">singularity</span><span class="o">.</span><span class="n">conf</span> <span class="n">run</span> <span class="o">/</span><span class="n">scratch</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">nf</span><span class="o">/</span><span class="n">set_alpha10v0</span><span class="o">/</span><span class="n">tractoflow_stonge</span><span class="o">/</span><span class="n">main</span><span class="o">.</span><span class="n">nf</span> \
+<span class="n">nextflow</span> <span class="o">-</span><span class="n">c</span> <span class="o">/</span><span class="n">scratch</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">nf</span><span class="o">/</span><span class="n">singularity</span><span class="o">.</span><span class="n">conf</span> <span class="n">run</span> <span class="o">/</span><span class="n">scratch</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">nf</span><span class="o">/</span><span class="n">set_1v0</span><span class="o">/</span><span class="n">tractoflow_stonge</span><span class="o">/</span><span class="n">main</span><span class="o">.</span><span class="n">nf</span> \
     <span class="o">--</span><span class="n">root</span> <span class="o">/</span><span class="n">scratch</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">hcp_data</span><span class="o">/</span> \
     <span class="o">-</span><span class="n">profile</span> <span class="n">brain_mask_only</span> \
     <span class="o">--</span><span class="n">dti_shells</span> <span class="s2">&quot;0 1000&quot;</span> <span class="o">--</span><span class="n">fodf_shells</span> <span class="s2">&quot;0 1000 2000 3000&quot;</span> \
@@ -193,17 +200,16 @@
 </div>
 <div class="section" id="run-set-nextflow-set-nf">
 <h2>Run SET Nextflow  (set-nf)<a class="headerlink" href="#run-set-nextflow-set-nf" title="Permalink to this headline">¶</a></h2>
-<p>PROFILE :</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mkdir</span> <span class="o">/</span><span class="n">scratch</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">nf</span><span class="o">/</span><span class="n">hcp_set_test</span>
 <span class="n">cd</span> <span class="o">/</span><span class="n">scratch</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">nf</span><span class="o">/</span><span class="n">hcp_set_test</span>
 
-<span class="n">nextflow</span><span class="o">-</span><span class="mf">20.04</span><span class="o">.</span><span class="mi">1</span><span class="o">-</span><span class="nb">all</span> <span class="o">-</span><span class="n">c</span> <span class="o">/</span><span class="n">scratch</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">nf</span><span class="o">/</span><span class="n">singularity</span><span class="o">.</span><span class="n">conf</span> <span class="n">run</span> <span class="o">/</span><span class="n">scratch</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">nf</span><span class="o">/</span><span class="n">set_alpha10v0</span><span class="o">/</span><span class="nb">set</span><span class="o">-</span><span class="n">nf</span><span class="o">/</span><span class="n">main</span><span class="o">.</span><span class="n">nf</span> \
+<span class="n">nextflow</span><span class="o">-</span><span class="mf">20.04</span><span class="o">.</span><span class="mi">1</span><span class="o">-</span><span class="nb">all</span> <span class="o">-</span><span class="n">c</span> <span class="o">/</span><span class="n">scratch</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">nf</span><span class="o">/</span><span class="n">singularity</span><span class="o">.</span><span class="n">conf</span> <span class="n">run</span> <span class="o">/</span><span class="n">scratch</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">nf</span><span class="o">/</span><span class="n">set_1v0</span><span class="o">/</span><span class="nb">set</span><span class="o">-</span><span class="n">nf</span><span class="o">/</span><span class="n">main</span><span class="o">.</span><span class="n">nf</span> \
     <span class="o">--</span><span class="n">tractoflow</span> <span class="o">/</span><span class="n">scratch</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">nf</span><span class="o">/</span><span class="n">hcp_tf_test</span><span class="o">/</span><span class="n">results</span><span class="o">/</span> \
     <span class="o">--</span><span class="n">surfaces</span> <span class="o">/</span><span class="n">scratch</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">hcp_freesurfer</span><span class="o">/</span> \
     <span class="o">--</span><span class="n">nowarp</span> <span class="n">true</span> \
     <span class="o">-</span><span class="n">profile</span> <span class="n">civet2_dkt</span> \
     <span class="o">-</span><span class="k">with</span><span class="o">-</span><span class="n">report</span> <span class="n">report</span><span class="o">.</span><span class="n">html</span> \
-    <span class="o">-</span><span class="k">with</span><span class="o">-</span><span class="n">singularity</span> <span class="o">/</span><span class="n">scratch</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">nf</span><span class="o">/</span><span class="n">set_alpha10v0</span><span class="o">/</span><span class="n">set_alpha10v0</span><span class="o">.</span><span class="n">img</span> \
+    <span class="o">-</span><span class="k">with</span><span class="o">-</span><span class="n">singularity</span> <span class="o">/</span><span class="n">scratch</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">nf</span><span class="o">/</span><span class="n">set_1v0</span><span class="o">/</span><span class="n">set_1v0</span><span class="o">.</span><span class="n">img</span> \
     <span class="o">-</span><span class="n">resume</span>
 </pre></div>
 </div>
@@ -221,7 +227,7 @@
         <a href="../ref/ref.html" class="btn btn-neutral float-right" title="References" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../setup/python.html" class="btn btn-neutral float-left" title="Python" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="set-civet.html" class="btn btn-neutral float-left" title="Usage: SET with CIVET" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
