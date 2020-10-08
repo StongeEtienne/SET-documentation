@@ -181,24 +181,69 @@ Neuroimage, 98, pp.266-278.  <a class="reference external" href="https://doi.org
 <div class="toctree-wrapper compound">
 <p class="caption"><span class="caption-text">Setup</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="setup/setup.html">Setup with singularity</a></li>
-<li class="toctree-l1"><a class="reference internal" href="setup/setupdev.html">Setup  dev (without singularity)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="setup/cluster.html">Setup on cluster</a></li>
-<li class="toctree-l1"><a class="reference internal" href="setup/python.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup/setup.html">Setup with singularity</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="setup/setup.html#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup/setup.html#singularity">Singularity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup/setup.html#nextflow">Nextflow</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="setup/setupdev.html">Setup  dev (without singularity)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="setup/setupdev.html#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup/setupdev.html#python">Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup/setupdev.html#other-tools-ants-mrtrix3-freesurfer">Other tools (ANTs, MRtrix3, Freesurfer)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup/setupdev.html#minc-tools-civet">MINC tools (CIVET)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup/setupdev.html#civet-labels">CIVET Labels</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="setup/cluster.html">Setup on cluster</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="setup/cluster.html#requirements-bashrc-or-run-script">Requirements (bashrc, or run script)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup/cluster.html#singularity-config-file-singularity-conf">Singularity config file (singularity.conf)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="setup/python.html">Python</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="setup/python.html#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup/python.html#annaconda">Annaconda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup/python.html#python-3-7-for-scilpy-dev">Python 3.7 (for scilpy DEV)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup/python.html#python-2-7-for-set-dev">Python 2.7 (for set DEV)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup/python.html#python-2-7-for-set-nf">Python 2.7 (for set-nf)</a></li>
+</ul>
+</li>
 </ul>
 </div>
 <div class="toctree-wrapper compound">
 <p class="caption"><span class="caption-text">Usage</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="usage/data.html">Data Requirements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="usage/set-freesurfer.html">Usage: SET with FreeSurfer</a></li>
-<li class="toctree-l1"><a class="reference internal" href="usage/set-civet.html">Usage: SET with CIVET</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage/data.html">Data Requirements</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="usage/data.html#data-for-freesurfer">Data for freesurfer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage/data.html#data-for-civet">Data for CIVET</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage/data.html#data-for-tractoflow">Data for Tractoflow</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="usage/set-freesurfer.html">Usage: SET with FreeSurfer</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="usage/set-freesurfer.html#run-freesurfer">Run freesurfer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage/set-freesurfer.html#run-tractoflow-nextflow">Run Tractoflow Nextflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage/set-freesurfer.html#run-civet-nf">Run civet-nf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage/set-freesurfer.html#run-set-nextflow-set-nf">Run SET Nextflow  (set-nf)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="usage/set-civet.html">Usage: SET with CIVET</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="usage/set-civet.html#run-civet">Run civet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage/set-civet.html#run-civet-nf">Run civet-nf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage/set-civet.html#run-tractoflow-profile-civet-pve">Run Tractoflow (-profile civet_pve)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage/set-civet.html#run-set-nextflow-set-nf">Run SET Nextflow  (set-nf)</a></li>
+</ul>
+</li>
 </ul>
 </div>
 <div class="toctree-wrapper compound">
 <p class="caption"><span class="caption-text">Run HCP</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="usage/hcp.html">Usage for HCP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage/hcp.html">Usage for HCP</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="usage/hcp.html#setup-data">Setup data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage/hcp.html#run-tractoflow-nextflow-tractoflow-stonge">Run Tractoflow Nextflow  (tractoflow_stonge)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage/hcp.html#run-set-nextflow-set-nf">Run SET Nextflow  (set-nf)</a></li>
+</ul>
+</li>
 </ul>
 </div>
 <div class="toctree-wrapper compound">
